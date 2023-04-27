@@ -1,0 +1,33 @@
+version: "3.1"
+nlu:
+- intent: introduction
+  examples: |
+    - introduce yourself
+    - Tell me something about you
+    - Who are you?
+    - What can you do?
+- intent: greet
+  examples: |
+    - good morning
+    - hey
+    - hello
+    - hi
+    - goodmorning
+stories:
+- story: tell more about yourself
+  steps:
+    - intent: introduction
+    - action: utter_introduction
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+responses:
+  utter_introduction:
+  - text: My name is ... 
+  utter_greet:
+  - text: Hey! How are you?
+

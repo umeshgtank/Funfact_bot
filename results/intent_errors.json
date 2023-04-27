@@ -1,0 +1,66 @@
+[
+  {
+    "text": "what do you know about pet?",
+    "intent": "pet_fun_facts",
+    "intent_prediction": {
+      "name": "Pet_fun_facts",
+      "confidence": 0.42491835355758667
+    }
+  },
+  {
+    "text": "Tell me something about Fiction",
+    "intent": "Fiction_fun_facts",
+    "intent_prediction": {
+      "name": "Non-fiction_fun_facts",
+      "confidence": 0.5630113482475281
+    }
+  },
+  {
+    "text": "What do you know about fish?",
+    "intent": "fish_fun_facts",
+    "intent_prediction": {
+      "name": "Fish_fun_facts",
+      "confidence": 0.43016868829727173
+    }
+  },
+  {
+    "text": "Barreleye",
+    "intent": "fish_name",
+    "intent_prediction": {
+      "name": "Car_fun_facts",
+      "confidence": 0.04324277862906456
+    }
+  },
+  {
+    "text": "of course",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "Call_of_Duty_fun_facts",
+      "confidence": 0.1759287565946579
+    }
+  },
+  {
+    "text": "not really",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.5592392086982727
+    }
+  },
+  {
+    "text": "good by",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.2730553448200226
+    }
+  },
+  {
+    "text": "my day was horrible",
+    "intent": "mood_unhappy",
+    "intent_prediction": {
+      "name": "Prime_minister_fun_facts",
+      "confidence": 0.09072353690862656
+    }
+  }
+]

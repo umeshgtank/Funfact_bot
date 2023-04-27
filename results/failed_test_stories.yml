@@ -1,0 +1,20 @@
+version: "3.1"
+stories:
+- story: about Football_fun_facts (./tests/test_stories.yml)
+  steps:
+  - intent: Football_fun_facts  # predicted: Baseball_fun_facts: tell me something about baseball
+  - action: utter_Football_fun_facts
+- story: tell me more about Football (./tests/test_stories.yml)
+  steps:
+  - intent: Football_fun_facts  # predicted: Baseball_fun_facts: tell me something about baseball
+  - action: utter_Football_fun_facts
+  - intent: tell_me_more
+  - action: utter_Football_fun_facts
+- story: tell me more about Football (./tests/test_stories.yml)
+  steps:
+  - intent: Football_fun_facts  # predicted: Baseball_fun_facts: tell me something about baseball
+  - action: utter_Football_fun_facts
+  - intent: tell_me_more
+  - action: utter_Football_fun_facts
+  - intent: tell_me_more
+  - action: utter_Football_fun_facts

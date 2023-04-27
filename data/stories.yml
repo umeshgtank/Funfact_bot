@@ -1,0 +1,5290 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+# - story: facts about fish
+#   steps:
+#   - intent: fish_facts
+#     entities: 
+#     - fish_type: Seahorse
+#   - action: utter_seahorse_facts 
+
+# - story: fish facts + jellyfish
+#   steps:
+#     - intent: facts_about_jellyfish
+#     - action: utter_jellyfish_facts
+
+# - story: fish facts + Seahorse
+#   steps:
+#     - intent: facts_about_fish + {"fish_type":"Seahorse"}
+#     - action: utter_seahorse_facts
+
+# - story: fish facts + goldfish
+#   steps:
+#     - intent: facts_about_fish + {"fish_type":"goldfish"}
+#     - action: utter_goldfish_facts
+
+- story: facts about pet
+  steps:
+    - intent: pet_fun_facts
+    - action: utter_pet
+- story: pet definition
+  steps:
+    - intent: pet_definition
+    - action: utter_pet_definition
+
+- story: about fish_fun_fact
+  steps:
+    - intent: fish_fun_facts
+      entities:
+      - fact_about: "fish_fun_facts"
+    - slot_was_set:
+      - fact_about: "fish_fun_facts"
+    - action: utter_fish_facts
+
+- story: about pet_fun_fact
+  steps:
+    - intent: pet_fun_facts
+      entities:
+      - fact_about: "pet_fun_facts"
+    - slot_was_set:
+      - fact_about: "pet_fun_facts"
+    - action: utter_pet
+- story: tell more about yourself
+  steps:
+    - intent: introduction
+    - action: utter_introduction
+- story: facts about fish
+  steps:
+  - intent: fish_fun_facts
+  - action: utter_fish_facts
+
+- story: about fish_fun_fact
+  steps:
+    - intent: fish_fun_facts
+      entities:
+      - fact_about: "fish_fun_facts"
+    - slot_was_set:
+      - fact_about: "fish_fun_facts"
+    - action: utter_fish_facts
+
+- story: about pet_fun_fact
+  steps:
+    - intent: pet_fun_facts
+      entities:
+      - fact_about: "pet_fun_facts"
+    - slot_was_set:
+      - fact_about: "pet_fun_facts"
+    - action: utter_pet
+
+- story: tell more about pet
+  steps:
+    - intent: pet_fun_facts
+    - action: utter_pet
+    - intent: tell_me_more
+    - action: utter_pet
+
+- story: tell more about pet
+  steps:
+    - intent: pet_fun_facts
+    - action: utter_pet
+    - intent: tell_me_more
+    - action: utter_pet
+    - intent: tell_me_more
+    - action: utter_pet
+
+
+- story: tell more about fish
+  steps:
+    - intent: fish_fun_facts
+    - action: utter_fish_facts
+    - intent: tell_me_more
+    - action: utter_fish_facts
+
+- story: tell more about pet
+  steps:
+    - intent: fish_fun_facts
+    - action: utter_fish_facts
+    - intent: tell_me_more
+    - action: utter_fish_facts
+    - intent: tell_me_more
+    - action: utter_fish_facts
+
+- story: name of fish
+  steps:
+  - intent: fish_name
+  - action: utter_name_fish
+  
+- story: about Baseball_fun_facts
+  steps:
+     - intent: Baseball_fun_facts
+     - action: utter_Baseball_fun_facts
+
+- story: tell me more about Baseball
+  steps:
+    - intent: Baseball_fun_facts
+    - action: utter_Baseball_fun_facts
+    - intent: tell_me_more
+    - action: utter_Baseball_fun_facts
+
+- story: tell me more about Baseball
+  steps:
+    - intent: Baseball_fun_facts
+    - action: utter_Baseball_fun_facts
+    - intent: tell_me_more
+    - action: utter_Baseball_fun_facts
+    - intent: tell_me_more
+    - action: utter_Baseball_fun_facts
+
+- story: about Football_fun_facts
+  steps:
+     - intent: Football_fun_facts
+     - action: utter_Football_fun_facts
+
+- story: tell me more about Football
+  steps:
+    - intent: Football_fun_facts
+    - action: utter_Football_fun_facts
+    - intent: tell_me_more
+    - action: utter_Football_fun_facts
+
+- story: tell me more about Football
+  steps:
+    - intent: Football_fun_facts
+    - action: utter_Football_fun_facts
+    - intent: tell_me_more
+    - action: utter_Football_fun_facts
+    - intent: tell_me_more
+    - action: utter_Football_fun_facts
+
+- story: about Basketball_fun_facts
+  steps:
+     - intent: Basketball_fun_facts
+     - action: utter_Basketball_fun_facts
+
+- story: tell me more about Basketball
+  steps:
+    - intent: Basketball_fun_facts
+    - action: utter_Basketball_fun_facts
+    - intent: tell_me_more
+    - action: utter_Basketball_fun_facts
+
+- story: tell me more about Basketball
+  steps:
+    - intent: Basketball_fun_facts
+    - action: utter_Basketball_fun_facts
+    - intent: tell_me_more
+    - action: utter_Basketball_fun_facts
+    - intent: tell_me_more
+    - action: utter_Basketball_fun_facts
+
+- story: about Car_fun_facts
+  steps:
+     - intent: Car_fun_facts
+     - action: utter_Car_fun_facts
+
+- story: tell me more about Car
+  steps:
+    - intent: Car_fun_facts
+    - action: utter_Car_fun_facts
+    - intent: tell_me_more
+    - action: utter_Car_fun_facts
+
+- story: tell me more about Car
+  steps:
+    - intent: Car_fun_facts
+    - action: utter_Car_fun_facts
+    - intent: tell_me_more
+    - action: utter_Car_fun_facts
+    - intent: tell_me_more
+    - action: utter_Car_fun_facts
+
+- story: about Telephone_fun_facts
+  steps:
+     - intent: Telephone_fun_facts
+     - action: utter_Telephone_fun_facts
+
+- story: tell me more about Telephone
+  steps:
+    - intent: Telephone_fun_facts
+    - action: utter_Telephone_fun_facts
+    - intent: tell_me_more
+    - action: utter_Telephone_fun_facts
+
+- story: tell me more about Telephone
+  steps:
+    - intent: Telephone_fun_facts
+    - action: utter_Telephone_fun_facts
+    - intent: tell_me_more
+    - action: utter_Telephone_fun_facts
+    - intent: tell_me_more
+    - action: utter_Telephone_fun_facts
+
+- story: about Fish_fun_facts
+  steps:
+     - intent: Fish_fun_facts
+     - action: utter_Fish_fun_facts
+
+- story: tell me more about Fish
+  steps:
+    - intent: Fish_fun_facts
+    - action: utter_Fish_fun_facts
+    - intent: tell_me_more
+    - action: utter_Fish_fun_facts
+
+- story: tell me more about Fish
+  steps:
+    - intent: Fish_fun_facts
+    - action: utter_Fish_fun_facts
+    - intent: tell_me_more
+    - action: utter_Fish_fun_facts
+    - intent: tell_me_more
+    - action: utter_Fish_fun_facts
+
+- story: about Internet_fun_facts
+  steps:
+     - intent: Internet_fun_facts
+     - action: utter_Internet_fun_facts
+
+- story: tell me more about Internet
+  steps:
+    - intent: Internet_fun_facts
+    - action: utter_Internet_fun_facts
+    - intent: tell_me_more
+    - action: utter_Internet_fun_facts
+
+- story: tell me more about Internet
+  steps:
+    - intent: Internet_fun_facts
+    - action: utter_Internet_fun_facts
+    - intent: tell_me_more
+    - action: utter_Internet_fun_facts
+    - intent: tell_me_more
+    - action: utter_Internet_fun_facts
+
+- story: about Computer_fun_facts
+  steps:
+     - intent: Computer_fun_facts
+     - action: utter_Computer_fun_facts
+
+- story: tell me more about Computer
+  steps:
+    - intent: Computer_fun_facts
+    - action: utter_Computer_fun_facts
+    - intent: tell_me_more
+    - action: utter_Computer_fun_facts
+
+- story: tell me more about Computer
+  steps:
+    - intent: Computer_fun_facts
+    - action: utter_Computer_fun_facts
+    - intent: tell_me_more
+    - action: utter_Computer_fun_facts
+    - intent: tell_me_more
+    - action: utter_Computer_fun_facts
+
+- story: about Government_fun_facts
+  steps:
+     - intent: Government_fun_facts
+     - action: utter_Government_fun_facts
+
+- story: tell me more about Government
+  steps:
+    - intent: Government_fun_facts
+    - action: utter_Government_fun_facts
+    - intent: tell_me_more
+    - action: utter_Government_fun_facts
+
+- story: tell me more about Government
+  steps:
+    - intent: Government_fun_facts
+    - action: utter_Government_fun_facts
+    - intent: tell_me_more
+    - action: utter_Government_fun_facts
+    - intent: tell_me_more
+    - action: utter_Government_fun_facts
+
+- story: about Marvel_Comics_fun_facts
+  steps:
+     - intent: Marvel_Comics_fun_facts
+     - action: utter_Marvel_Comics_fun_facts
+
+- story: tell me more about Marvel_Comics
+  steps:
+    - intent: Marvel_Comics_fun_facts
+    - action: utter_Marvel_Comics_fun_facts
+    - intent: tell_me_more
+    - action: utter_Marvel_Comics_fun_facts
+
+- story: tell me more about Marvel_Comics
+  steps:
+    - intent: Marvel_Comics_fun_facts
+    - action: utter_Marvel_Comics_fun_facts
+    - intent: tell_me_more
+    - action: utter_Marvel_Comics_fun_facts
+    - intent: tell_me_more
+    - action: utter_Marvel_Comics_fun_facts
+
+- story: about Netflix_fun_facts
+  steps:
+     - intent: Netflix_fun_facts
+     - action: utter_Netflix_fun_facts
+
+- story: tell me more about Netflix
+  steps:
+    - intent: Netflix_fun_facts
+    - action: utter_Netflix_fun_facts
+    - intent: tell_me_more
+    - action: utter_Netflix_fun_facts
+
+- story: tell me more about Netflix
+  steps:
+    - intent: Netflix_fun_facts
+    - action: utter_Netflix_fun_facts
+    - intent: tell_me_more
+    - action: utter_Netflix_fun_facts
+    - intent: tell_me_more
+    - action: utter_Netflix_fun_facts
+
+- story: about Superhero_fun_facts
+  steps:
+     - intent: Superhero_fun_facts
+     - action: utter_Superhero_fun_facts
+
+- story: tell me more about Superhero
+  steps:
+    - intent: Superhero_fun_facts
+    - action: utter_Superhero_fun_facts
+    - intent: tell_me_more
+    - action: utter_Superhero_fun_facts
+
+- story: tell me more about Superhero
+  steps:
+    - intent: Superhero_fun_facts
+    - action: utter_Superhero_fun_facts
+    - intent: tell_me_more
+    - action: utter_Superhero_fun_facts
+    - intent: tell_me_more
+    - action: utter_Superhero_fun_facts
+
+- story: about Planet_fun_facts
+  steps:
+     - intent: Planet_fun_facts
+     - action: utter_Planet_fun_facts
+
+- story: tell me more about Planet
+  steps:
+    - intent: Planet_fun_facts
+    - action: utter_Planet_fun_facts
+    - intent: tell_me_more
+    - action: utter_Planet_fun_facts
+
+- story: tell me more about Planet
+  steps:
+    - intent: Planet_fun_facts
+    - action: utter_Planet_fun_facts
+    - intent: tell_me_more
+    - action: utter_Planet_fun_facts
+    - intent: tell_me_more
+    - action: utter_Planet_fun_facts
+
+- story: about Facebook_fun_facts
+  steps:
+     - intent: Facebook_fun_facts
+     - action: utter_Facebook_fun_facts
+
+- story: tell me more about Facebook
+  steps:
+    - intent: Facebook_fun_facts
+    - action: utter_Facebook_fun_facts
+    - intent: tell_me_more
+    - action: utter_Facebook_fun_facts
+
+- story: tell me more about Facebook
+  steps:
+    - intent: Facebook_fun_facts
+    - action: utter_Facebook_fun_facts
+    - intent: tell_me_more
+    - action: utter_Facebook_fun_facts
+    - intent: tell_me_more
+    - action: utter_Facebook_fun_facts
+
+- story: about Concert_fun_facts
+  steps:
+     - intent: Concert_fun_facts
+     - action: utter_Concert_fun_facts
+
+- story: tell me more about Concert
+  steps:
+    - intent: Concert_fun_facts
+    - action: utter_Concert_fun_facts
+    - intent: tell_me_more
+    - action: utter_Concert_fun_facts
+
+- story: tell me more about Concert
+  steps:
+    - intent: Concert_fun_facts
+    - action: utter_Concert_fun_facts
+    - intent: tell_me_more
+    - action: utter_Concert_fun_facts
+    - intent: tell_me_more
+    - action: utter_Concert_fun_facts
+
+- story: about National_Basketball_Association_fun_facts
+  steps:
+     - intent: National_Basketball_Association_fun_facts
+     - action: utter_National_Basketball_Association_fun_facts
+
+- story: tell me more about National_Basketball_Association
+  steps:
+    - intent: National_Basketball_Association_fun_facts
+    - action: utter_National_Basketball_Association_fun_facts
+    - intent: tell_me_more
+    - action: utter_National_Basketball_Association_fun_facts
+
+- story: tell me more about National_Basketball_Association
+  steps:
+    - intent: National_Basketball_Association_fun_facts
+    - action: utter_National_Basketball_Association_fun_facts
+    - intent: tell_me_more
+    - action: utter_National_Basketball_Association_fun_facts
+    - intent: tell_me_more
+    - action: utter_National_Basketball_Association_fun_facts
+
+- story: about Drama_fun_facts
+  steps:
+     - intent: Drama_fun_facts
+     - action: utter_Drama_fun_facts
+
+- story: tell me more about Drama
+  steps:
+    - intent: Drama_fun_facts
+    - action: utter_Drama_fun_facts
+    - intent: tell_me_more
+    - action: utter_Drama_fun_facts
+
+- story: tell me more about Drama
+  steps:
+    - intent: Drama_fun_facts
+    - action: utter_Drama_fun_facts
+    - intent: tell_me_more
+    - action: utter_Drama_fun_facts
+    - intent: tell_me_more
+    - action: utter_Drama_fun_facts
+
+- story: about LeBron_James_fun_facts
+  steps:
+     - intent: LeBron_James_fun_facts
+     - action: utter_LeBron_James_fun_facts
+
+- story: tell me more about LeBron_James
+  steps:
+    - intent: LeBron_James_fun_facts
+    - action: utter_LeBron_James_fun_facts
+    - intent: tell_me_more
+    - action: utter_LeBron_James_fun_facts
+
+- story: tell me more about LeBron_James
+  steps:
+    - intent: LeBron_James_fun_facts
+    - action: utter_LeBron_James_fun_facts
+    - intent: tell_me_more
+    - action: utter_LeBron_James_fun_facts
+    - intent: tell_me_more
+    - action: utter_LeBron_James_fun_facts
+
+- story: about Lady_Gaga_fun_facts
+  steps:
+     - intent: Lady_Gaga_fun_facts
+     - action: utter_Lady_Gaga_fun_facts
+
+- story: tell me more about Lady_Gaga
+  steps:
+    - intent: Lady_Gaga_fun_facts
+    - action: utter_Lady_Gaga_fun_facts
+    - intent: tell_me_more
+    - action: utter_Lady_Gaga_fun_facts
+
+- story: tell me more about Lady_Gaga
+  steps:
+    - intent: Lady_Gaga_fun_facts
+    - action: utter_Lady_Gaga_fun_facts
+    - intent: tell_me_more
+    - action: utter_Lady_Gaga_fun_facts
+    - intent: tell_me_more
+    - action: utter_Lady_Gaga_fun_facts
+
+- story: about Guitar_fun_facts
+  steps:
+     - intent: Guitar_fun_facts
+     - action: utter_Guitar_fun_facts
+
+- story: tell me more about Guitar
+  steps:
+    - intent: Guitar_fun_facts
+    - action: utter_Guitar_fun_facts
+    - intent: tell_me_more
+    - action: utter_Guitar_fun_facts
+
+- story: tell me more about Guitar
+  steps:
+    - intent: Guitar_fun_facts
+    - action: utter_Guitar_fun_facts
+    - intent: tell_me_more
+    - action: utter_Guitar_fun_facts
+    - intent: tell_me_more
+    - action: utter_Guitar_fun_facts
+
+- story: about Election_fun_facts
+  steps:
+     - intent: Election_fun_facts
+     - action: utter_Election_fun_facts
+
+- story: tell me more about Election
+  steps:
+    - intent: Election_fun_facts
+    - action: utter_Election_fun_facts
+    - intent: tell_me_more
+    - action: utter_Election_fun_facts
+
+- story: tell me more about Election
+  steps:
+    - intent: Election_fun_facts
+    - action: utter_Election_fun_facts
+    - intent: tell_me_more
+    - action: utter_Election_fun_facts
+    - intent: tell_me_more
+    - action: utter_Election_fun_facts
+
+- story: about Radio_fun_facts
+  steps:
+     - intent: Radio_fun_facts
+     - action: utter_Radio_fun_facts
+
+- story: tell me more about Radio
+  steps:
+    - intent: Radio_fun_facts
+    - action: utter_Radio_fun_facts
+    - intent: tell_me_more
+    - action: utter_Radio_fun_facts
+
+- story: tell me more about Radio
+  steps:
+    - intent: Radio_fun_facts
+    - action: utter_Radio_fun_facts
+    - intent: tell_me_more
+    - action: utter_Radio_fun_facts
+    - intent: tell_me_more
+    - action: utter_Radio_fun_facts
+
+- story: about Sun_fun_facts
+  steps:
+     - intent: Sun_fun_facts
+     - action: utter_Sun_fun_facts
+
+- story: tell me more about Sun
+  steps:
+    - intent: Sun_fun_facts
+    - action: utter_Sun_fun_facts
+    - intent: tell_me_more
+    - action: utter_Sun_fun_facts
+
+- story: tell me more about Sun
+  steps:
+    - intent: Sun_fun_facts
+    - action: utter_Sun_fun_facts
+    - intent: tell_me_more
+    - action: utter_Sun_fun_facts
+    - intent: tell_me_more
+    - action: utter_Sun_fun_facts
+
+- story: about Bird_fun_facts
+  steps:
+     - intent: Bird_fun_facts
+     - action: utter_Bird_fun_facts
+
+- story: tell me more about Bird
+  steps:
+    - intent: Bird_fun_facts
+    - action: utter_Bird_fun_facts
+    - intent: tell_me_more
+    - action: utter_Bird_fun_facts
+
+- story: tell me more about Bird
+  steps:
+    - intent: Bird_fun_facts
+    - action: utter_Bird_fun_facts
+    - intent: tell_me_more
+    - action: utter_Bird_fun_facts
+    - intent: tell_me_more
+    - action: utter_Bird_fun_facts
+
+- story: about Dog_fun_facts
+  steps:
+     - intent: Dog_fun_facts
+     - action: utter_Dog_fun_facts
+
+- story: tell me more about Dog
+  steps:
+    - intent: Dog_fun_facts
+    - action: utter_Dog_fun_facts
+    - intent: tell_me_more
+    - action: utter_Dog_fun_facts
+
+- story: tell me more about Dog
+  steps:
+    - intent: Dog_fun_facts
+    - action: utter_Dog_fun_facts
+    - intent: tell_me_more
+    - action: utter_Dog_fun_facts
+    - intent: tell_me_more
+    - action: utter_Dog_fun_facts
+
+- story: about Celebrity_fun_facts
+  steps:
+     - intent: Celebrity_fun_facts
+     - action: utter_Celebrity_fun_facts
+
+- story: tell me more about Celebrity
+  steps:
+    - intent: Celebrity_fun_facts
+    - action: utter_Celebrity_fun_facts
+    - intent: tell_me_more
+    - action: utter_Celebrity_fun_facts
+
+- story: tell me more about Celebrity
+  steps:
+    - intent: Celebrity_fun_facts
+    - action: utter_Celebrity_fun_facts
+    - intent: tell_me_more
+    - action: utter_Celebrity_fun_facts
+    - intent: tell_me_more
+    - action: utter_Celebrity_fun_facts
+
+- story: about Horror_film_fun_facts
+  steps:
+     - intent: Horror_film_fun_facts
+     - action: utter_Horror_film_fun_facts
+
+- story: tell me more about Horror_film
+  steps:
+    - intent: Horror_film_fun_facts
+    - action: utter_Horror_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Horror_film_fun_facts
+
+- story: tell me more about Horror_film
+  steps:
+    - intent: Horror_film_fun_facts
+    - action: utter_Horror_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Horror_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Horror_film_fun_facts
+
+- story: about Earth_fun_facts
+  steps:
+     - intent: Earth_fun_facts
+     - action: utter_Earth_fun_facts
+
+- story: tell me more about Earth
+  steps:
+    - intent: Earth_fun_facts
+    - action: utter_Earth_fun_facts
+    - intent: tell_me_more
+    - action: utter_Earth_fun_facts
+
+- story: tell me more about Earth
+  steps:
+    - intent: Earth_fun_facts
+    - action: utter_Earth_fun_facts
+    - intent: tell_me_more
+    - action: utter_Earth_fun_facts
+    - intent: tell_me_more
+    - action: utter_Earth_fun_facts
+
+- story: about Television_fun_facts
+  steps:
+     - intent: Television_fun_facts
+     - action: utter_Television_fun_facts
+
+- story: tell me more about Television
+  steps:
+    - intent: Television_fun_facts
+    - action: utter_Television_fun_facts
+    - intent: tell_me_more
+    - action: utter_Television_fun_facts
+
+- story: tell me more about Television
+  steps:
+    - intent: Television_fun_facts
+    - action: utter_Television_fun_facts
+    - intent: tell_me_more
+    - action: utter_Television_fun_facts
+    - intent: tell_me_more
+    - action: utter_Television_fun_facts
+
+- story: about Travel_fun_facts
+  steps:
+     - intent: Travel_fun_facts
+     - action: utter_Travel_fun_facts
+
+- story: tell me more about Travel
+  steps:
+    - intent: Travel_fun_facts
+    - action: utter_Travel_fun_facts
+    - intent: tell_me_more
+    - action: utter_Travel_fun_facts
+
+- story: tell me more about Travel
+  steps:
+    - intent: Travel_fun_facts
+    - action: utter_Travel_fun_facts
+    - intent: tell_me_more
+    - action: utter_Travel_fun_facts
+    - intent: tell_me_more
+    - action: utter_Travel_fun_facts
+
+- story: about Cricket_fun_facts
+  steps:
+     - intent: Cricket_fun_facts
+     - action: utter_Cricket_fun_facts
+
+- story: tell me more about Cricket
+  steps:
+    - intent: Cricket_fun_facts
+    - action: utter_Cricket_fun_facts
+    - intent: tell_me_more
+    - action: utter_Cricket_fun_facts
+
+- story: tell me more about Cricket
+  steps:
+    - intent: Cricket_fun_facts
+    - action: utter_Cricket_fun_facts
+    - intent: tell_me_more
+    - action: utter_Cricket_fun_facts
+    - intent: tell_me_more
+    - action: utter_Cricket_fun_facts
+
+- story: about Stephen_Curry_fun_facts
+  steps:
+     - intent: Stephen_Curry_fun_facts
+     - action: utter_Stephen_Curry_fun_facts
+
+- story: tell me more about Stephen_Curry
+  steps:
+    - intent: Stephen_Curry_fun_facts
+    - action: utter_Stephen_Curry_fun_facts
+    - intent: tell_me_more
+    - action: utter_Stephen_Curry_fun_facts
+
+- story: tell me more about Stephen_Curry
+  steps:
+    - intent: Stephen_Curry_fun_facts
+    - action: utter_Stephen_Curry_fun_facts
+    - intent: tell_me_more
+    - action: utter_Stephen_Curry_fun_facts
+    - intent: tell_me_more
+    - action: utter_Stephen_Curry_fun_facts
+
+- story: about Golden_State_Warriors_fun_facts
+  steps:
+     - intent: Golden_State_Warriors_fun_facts
+     - action: utter_Golden_State_Warriors_fun_facts
+
+- story: tell me more about Golden_State_Warriors
+  steps:
+    - intent: Golden_State_Warriors_fun_facts
+    - action: utter_Golden_State_Warriors_fun_facts
+    - intent: tell_me_more
+    - action: utter_Golden_State_Warriors_fun_facts
+
+- story: tell me more about Golden_State_Warriors
+  steps:
+    - intent: Golden_State_Warriors_fun_facts
+    - action: utter_Golden_State_Warriors_fun_facts
+    - intent: tell_me_more
+    - action: utter_Golden_State_Warriors_fun_facts
+    - intent: tell_me_more
+    - action: utter_Golden_State_Warriors_fun_facts
+
+- story: about Jazz_fun_facts
+  steps:
+     - intent: Jazz_fun_facts
+     - action: utter_Jazz_fun_facts
+
+- story: tell me more about Jazz
+  steps:
+    - intent: Jazz_fun_facts
+    - action: utter_Jazz_fun_facts
+    - intent: tell_me_more
+    - action: utter_Jazz_fun_facts
+
+- story: tell me more about Jazz
+  steps:
+    - intent: Jazz_fun_facts
+    - action: utter_Jazz_fun_facts
+    - intent: tell_me_more
+    - action: utter_Jazz_fun_facts
+    - intent: tell_me_more
+    - action: utter_Jazz_fun_facts
+
+- story: about Entertainment_fun_facts
+  steps:
+     - intent: Entertainment_fun_facts
+     - action: utter_Entertainment_fun_facts
+
+- story: tell me more about Entertainment
+  steps:
+    - intent: Entertainment_fun_facts
+    - action: utter_Entertainment_fun_facts
+    - intent: tell_me_more
+    - action: utter_Entertainment_fun_facts
+
+- story: tell me more about Entertainment
+  steps:
+    - intent: Entertainment_fun_facts
+    - action: utter_Entertainment_fun_facts
+    - intent: tell_me_more
+    - action: utter_Entertainment_fun_facts
+    - intent: tell_me_more
+    - action: utter_Entertainment_fun_facts
+
+- story: about YouTube_fun_facts
+  steps:
+     - intent: YouTube_fun_facts
+     - action: utter_YouTube_fun_facts
+
+- story: tell me more about YouTube
+  steps:
+    - intent: YouTube_fun_facts
+    - action: utter_YouTube_fun_facts
+    - intent: tell_me_more
+    - action: utter_YouTube_fun_facts
+
+- story: tell me more about YouTube
+  steps:
+    - intent: YouTube_fun_facts
+    - action: utter_YouTube_fun_facts
+    - intent: tell_me_more
+    - action: utter_YouTube_fun_facts
+    - intent: tell_me_more
+    - action: utter_YouTube_fun_facts
+
+- story: about Multiplayer_video_game_fun_facts
+  steps:
+     - intent: Multiplayer_video_game_fun_facts
+     - action: utter_Multiplayer_video_game_fun_facts
+
+- story: tell me more about Multiplayer_video_game
+  steps:
+    - intent: Multiplayer_video_game_fun_facts
+    - action: utter_Multiplayer_video_game_fun_facts
+    - intent: tell_me_more
+    - action: utter_Multiplayer_video_game_fun_facts
+
+- story: tell me more about Multiplayer_video_game
+  steps:
+    - intent: Multiplayer_video_game_fun_facts
+    - action: utter_Multiplayer_video_game_fun_facts
+    - intent: tell_me_more
+    - action: utter_Multiplayer_video_game_fun_facts
+    - intent: tell_me_more
+    - action: utter_Multiplayer_video_game_fun_facts
+
+- story: about Johnny_Depp_fun_facts
+  steps:
+     - intent: Johnny_Depp_fun_facts
+     - action: utter_Johnny_Depp_fun_facts
+
+- story: tell me more about Johnny_Depp
+  steps:
+    - intent: Johnny_Depp_fun_facts
+    - action: utter_Johnny_Depp_fun_facts
+    - intent: tell_me_more
+    - action: utter_Johnny_Depp_fun_facts
+
+- story: tell me more about Johnny_Depp
+  steps:
+    - intent: Johnny_Depp_fun_facts
+    - action: utter_Johnny_Depp_fun_facts
+    - intent: tell_me_more
+    - action: utter_Johnny_Depp_fun_facts
+    - intent: tell_me_more
+    - action: utter_Johnny_Depp_fun_facts
+
+- story: about White_House_fun_facts
+  steps:
+     - intent: White_House_fun_facts
+     - action: utter_White_House_fun_facts
+
+- story: tell me more about White_House
+  steps:
+    - intent: White_House_fun_facts
+    - action: utter_White_House_fun_facts
+    - intent: tell_me_more
+    - action: utter_White_House_fun_facts
+
+- story: tell me more about White_House
+  steps:
+    - intent: White_House_fun_facts
+    - action: utter_White_House_fun_facts
+    - intent: tell_me_more
+    - action: utter_White_House_fun_facts
+    - intent: tell_me_more
+    - action: utter_White_House_fun_facts
+
+- story: about Quarterback_fun_facts
+  steps:
+     - intent: Quarterback_fun_facts
+     - action: utter_Quarterback_fun_facts
+
+- story: tell me more about Quarterback
+  steps:
+    - intent: Quarterback_fun_facts
+    - action: utter_Quarterback_fun_facts
+    - intent: tell_me_more
+    - action: utter_Quarterback_fun_facts
+
+- story: tell me more about Quarterback
+  steps:
+    - intent: Quarterback_fun_facts
+    - action: utter_Quarterback_fun_facts
+    - intent: tell_me_more
+    - action: utter_Quarterback_fun_facts
+    - intent: tell_me_more
+    - action: utter_Quarterback_fun_facts
+
+- story: about National_Football_League_fun_facts
+  steps:
+     - intent: National_Football_League_fun_facts
+     - action: utter_National_Football_League_fun_facts
+
+- story: tell me more about National_Football_League
+  steps:
+    - intent: National_Football_League_fun_facts
+    - action: utter_National_Football_League_fun_facts
+    - intent: tell_me_more
+    - action: utter_National_Football_League_fun_facts
+
+- story: tell me more about National_Football_League
+  steps:
+    - intent: National_Football_League_fun_facts
+    - action: utter_National_Football_League_fun_facts
+    - intent: tell_me_more
+    - action: utter_National_Football_League_fun_facts
+    - intent: tell_me_more
+    - action: utter_National_Football_League_fun_facts
+
+- story: about Eli_Manning_fun_facts
+  steps:
+     - intent: Eli_Manning_fun_facts
+     - action: utter_Eli_Manning_fun_facts
+
+- story: tell me more about Eli_Manning
+  steps:
+    - intent: Eli_Manning_fun_facts
+    - action: utter_Eli_Manning_fun_facts
+    - intent: tell_me_more
+    - action: utter_Eli_Manning_fun_facts
+
+- story: tell me more about Eli_Manning
+  steps:
+    - intent: Eli_Manning_fun_facts
+    - action: utter_Eli_Manning_fun_facts
+    - intent: tell_me_more
+    - action: utter_Eli_Manning_fun_facts
+    - intent: tell_me_more
+    - action: utter_Eli_Manning_fun_facts
+
+- story: about President_fun_facts
+  steps:
+     - intent: President_fun_facts
+     - action: utter_President_fun_facts
+
+- story: tell me more about President
+  steps:
+    - intent: President_fun_facts
+    - action: utter_President_fun_facts
+    - intent: tell_me_more
+    - action: utter_President_fun_facts
+
+- story: tell me more about President
+  steps:
+    - intent: President_fun_facts
+    - action: utter_President_fun_facts
+    - intent: tell_me_more
+    - action: utter_President_fun_facts
+    - intent: tell_me_more
+    - action: utter_President_fun_facts
+
+- story: about Fox_News_fun_facts
+  steps:
+     - intent: Fox_News_fun_facts
+     - action: utter_Fox_News_fun_facts
+
+- story: tell me more about Fox_News
+  steps:
+    - intent: Fox_News_fun_facts
+    - action: utter_Fox_News_fun_facts
+    - intent: tell_me_more
+    - action: utter_Fox_News_fun_facts
+
+- story: tell me more about Fox_News
+  steps:
+    - intent: Fox_News_fun_facts
+    - action: utter_Fox_News_fun_facts
+    - intent: tell_me_more
+    - action: utter_Fox_News_fun_facts
+    - intent: tell_me_more
+    - action: utter_Fox_News_fun_facts
+
+- story: about Album_fun_facts
+  steps:
+     - intent: Album_fun_facts
+     - action: utter_Album_fun_facts
+
+- story: tell me more about Album
+  steps:
+    - intent: Album_fun_facts
+    - action: utter_Album_fun_facts
+    - intent: tell_me_more
+    - action: utter_Album_fun_facts
+
+- story: tell me more about Album
+  steps:
+    - intent: Album_fun_facts
+    - action: utter_Album_fun_facts
+    - intent: tell_me_more
+    - action: utter_Album_fun_facts
+    - intent: tell_me_more
+    - action: utter_Album_fun_facts
+
+- story: about Comedy_film_fun_facts
+  steps:
+     - intent: Comedy_film_fun_facts
+     - action: utter_Comedy_film_fun_facts
+
+- story: tell me more about Comedy_film
+  steps:
+    - intent: Comedy_film_fun_facts
+    - action: utter_Comedy_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Comedy_film_fun_facts
+
+- story: tell me more about Comedy_film
+  steps:
+    - intent: Comedy_film_fun_facts
+    - action: utter_Comedy_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Comedy_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Comedy_film_fun_facts
+
+- story: about Shoe_fun_facts
+  steps:
+     - intent: Shoe_fun_facts
+     - action: utter_Shoe_fun_facts
+
+- story: tell me more about Shoe
+  steps:
+    - intent: Shoe_fun_facts
+    - action: utter_Shoe_fun_facts
+    - intent: tell_me_more
+    - action: utter_Shoe_fun_facts
+
+- story: tell me more about Shoe
+  steps:
+    - intent: Shoe_fun_facts
+    - action: utter_Shoe_fun_facts
+    - intent: tell_me_more
+    - action: utter_Shoe_fun_facts
+    - intent: tell_me_more
+    - action: utter_Shoe_fun_facts
+
+- story: about Human_fun_facts
+  steps:
+     - intent: Human_fun_facts
+     - action: utter_Human_fun_facts
+
+- story: tell me more about Human
+  steps:
+    - intent: Human_fun_facts
+    - action: utter_Human_fun_facts
+    - intent: tell_me_more
+    - action: utter_Human_fun_facts
+
+- story: tell me more about Human
+  steps:
+    - intent: Human_fun_facts
+    - action: utter_Human_fun_facts
+    - intent: tell_me_more
+    - action: utter_Human_fun_facts
+    - intent: tell_me_more
+    - action: utter_Human_fun_facts
+
+- story: about Summit_(meeting)_fun_facts
+  steps:
+     - intent: Summit_(meeting)_fun_facts
+     - action: utter_Summit_(meeting)_fun_facts
+
+- story: tell me more about Summit_(meeting)
+  steps:
+    - intent: Summit_(meeting)_fun_facts
+    - action: utter_Summit_(meeting)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Summit_(meeting)_fun_facts
+
+- story: tell me more about Summit_(meeting)
+  steps:
+    - intent: Summit_(meeting)_fun_facts
+    - action: utter_Summit_(meeting)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Summit_(meeting)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Summit_(meeting)_fun_facts
+
+- story: about Video_game_fun_facts
+  steps:
+     - intent: Video_game_fun_facts
+     - action: utter_Video_game_fun_facts
+
+- story: tell me more about Video_game
+  steps:
+    - intent: Video_game_fun_facts
+    - action: utter_Video_game_fun_facts
+    - intent: tell_me_more
+    - action: utter_Video_game_fun_facts
+
+- story: tell me more about Video_game
+  steps:
+    - intent: Video_game_fun_facts
+    - action: utter_Video_game_fun_facts
+    - intent: tell_me_more
+    - action: utter_Video_game_fun_facts
+    - intent: tell_me_more
+    - action: utter_Video_game_fun_facts
+
+- story: about Country_music_fun_facts
+  steps:
+     - intent: Country_music_fun_facts
+     - action: utter_Country_music_fun_facts
+
+- story: tell me more about Country_music
+  steps:
+    - intent: Country_music_fun_facts
+    - action: utter_Country_music_fun_facts
+    - intent: tell_me_more
+    - action: utter_Country_music_fun_facts
+
+- story: tell me more about Country_music
+  steps:
+    - intent: Country_music_fun_facts
+    - action: utter_Country_music_fun_facts
+    - intent: tell_me_more
+    - action: utter_Country_music_fun_facts
+    - intent: tell_me_more
+    - action: utter_Country_music_fun_facts
+
+- story: about Horse_fun_facts
+  steps:
+     - intent: Horse_fun_facts
+     - action: utter_Horse_fun_facts
+
+- story: tell me more about Horse
+  steps:
+    - intent: Horse_fun_facts
+    - action: utter_Horse_fun_facts
+    - intent: tell_me_more
+    - action: utter_Horse_fun_facts
+
+- story: tell me more about Horse
+  steps:
+    - intent: Horse_fun_facts
+    - action: utter_Horse_fun_facts
+    - intent: tell_me_more
+    - action: utter_Horse_fun_facts
+    - intent: tell_me_more
+    - action: utter_Horse_fun_facts
+
+- story: about Sock_fun_facts
+  steps:
+     - intent: Sock_fun_facts
+     - action: utter_Sock_fun_facts
+
+- story: tell me more about Sock
+  steps:
+    - intent: Sock_fun_facts
+    - action: utter_Sock_fun_facts
+    - intent: tell_me_more
+    - action: utter_Sock_fun_facts
+
+- story: tell me more about Sock
+  steps:
+    - intent: Sock_fun_facts
+    - action: utter_Sock_fun_facts
+    - intent: tell_me_more
+    - action: utter_Sock_fun_facts
+    - intent: tell_me_more
+    - action: utter_Sock_fun_facts
+
+- story: about New_England_Patriots_fun_facts
+  steps:
+     - intent: New_England_Patriots_fun_facts
+     - action: utter_New_England_Patriots_fun_facts
+
+- story: tell me more about New_England_Patriots
+  steps:
+    - intent: New_England_Patriots_fun_facts
+    - action: utter_New_England_Patriots_fun_facts
+    - intent: tell_me_more
+    - action: utter_New_England_Patriots_fun_facts
+
+- story: tell me more about New_England_Patriots
+  steps:
+    - intent: New_England_Patriots_fun_facts
+    - action: utter_New_England_Patriots_fun_facts
+    - intent: tell_me_more
+    - action: utter_New_England_Patriots_fun_facts
+    - intent: tell_me_more
+    - action: utter_New_England_Patriots_fun_facts
+
+- story: about Tom_Brady_fun_facts
+  steps:
+     - intent: Tom_Brady_fun_facts
+     - action: utter_Tom_Brady_fun_facts
+
+- story: tell me more about Tom_Brady
+  steps:
+    - intent: Tom_Brady_fun_facts
+    - action: utter_Tom_Brady_fun_facts
+    - intent: tell_me_more
+    - action: utter_Tom_Brady_fun_facts
+
+- story: tell me more about Tom_Brady
+  steps:
+    - intent: Tom_Brady_fun_facts
+    - action: utter_Tom_Brady_fun_facts
+    - intent: tell_me_more
+    - action: utter_Tom_Brady_fun_facts
+    - intent: tell_me_more
+    - action: utter_Tom_Brady_fun_facts
+
+- story: about Dance_fun_facts
+  steps:
+     - intent: Dance_fun_facts
+     - action: utter_Dance_fun_facts
+
+- story: tell me more about Dance
+  steps:
+    - intent: Dance_fun_facts
+    - action: utter_Dance_fun_facts
+    - intent: tell_me_more
+    - action: utter_Dance_fun_facts
+
+- story: tell me more about Dance
+  steps:
+    - intent: Dance_fun_facts
+    - action: utter_Dance_fun_facts
+    - intent: tell_me_more
+    - action: utter_Dance_fun_facts
+    - intent: tell_me_more
+    - action: utter_Dance_fun_facts
+
+- story: about Drake_(musician)_fun_facts
+  steps:
+     - intent: Drake_(musician)_fun_facts
+     - action: utter_Drake_(musician)_fun_facts
+
+- story: tell me more about Drake_(musician)
+  steps:
+    - intent: Drake_(musician)_fun_facts
+    - action: utter_Drake_(musician)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Drake_(musician)_fun_facts
+
+- story: tell me more about Drake_(musician)
+  steps:
+    - intent: Drake_(musician)_fun_facts
+    - action: utter_Drake_(musician)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Drake_(musician)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Drake_(musician)_fun_facts
+
+- story: about Hat_fun_facts
+  steps:
+     - intent: Hat_fun_facts
+     - action: utter_Hat_fun_facts
+
+- story: tell me more about Hat
+  steps:
+    - intent: Hat_fun_facts
+    - action: utter_Hat_fun_facts
+    - intent: tell_me_more
+    - action: utter_Hat_fun_facts
+
+- story: tell me more about Hat
+  steps:
+    - intent: Hat_fun_facts
+    - action: utter_Hat_fun_facts
+    - intent: tell_me_more
+    - action: utter_Hat_fun_facts
+    - intent: tell_me_more
+    - action: utter_Hat_fun_facts
+
+- story: about Snake_fun_facts
+  steps:
+     - intent: Snake_fun_facts
+     - action: utter_Snake_fun_facts
+
+- story: tell me more about Snake
+  steps:
+    - intent: Snake_fun_facts
+    - action: utter_Snake_fun_facts
+    - intent: tell_me_more
+    - action: utter_Snake_fun_facts
+
+- story: tell me more about Snake
+  steps:
+    - intent: Snake_fun_facts
+    - action: utter_Snake_fun_facts
+    - intent: tell_me_more
+    - action: utter_Snake_fun_facts
+    - intent: tell_me_more
+    - action: utter_Snake_fun_facts
+
+- story: about Kim_Jong-un_fun_facts
+  steps:
+     - intent: Kim_Jong-un_fun_facts
+     - action: utter_Kim_Jong-un_fun_facts
+
+- story: tell me more about Kim_Jong-un
+  steps:
+    - intent: Kim_Jong-un_fun_facts
+    - action: utter_Kim_Jong-un_fun_facts
+    - intent: tell_me_more
+    - action: utter_Kim_Jong-un_fun_facts
+
+- story: tell me more about Kim_Jong-un
+  steps:
+    - intent: Kim_Jong-un_fun_facts
+    - action: utter_Kim_Jong-un_fun_facts
+    - intent: tell_me_more
+    - action: utter_Kim_Jong-un_fun_facts
+    - intent: tell_me_more
+    - action: utter_Kim_Jong-un_fun_facts
+
+- story: about Association_football_fun_facts
+  steps:
+     - intent: Association_football_fun_facts
+     - action: utter_Association_football_fun_facts
+
+- story: tell me more about Association_football
+  steps:
+    - intent: Association_football_fun_facts
+    - action: utter_Association_football_fun_facts
+    - intent: tell_me_more
+    - action: utter_Association_football_fun_facts
+
+- story: tell me more about Association_football
+  steps:
+    - intent: Association_football_fun_facts
+    - action: utter_Association_football_fun_facts
+    - intent: tell_me_more
+    - action: utter_Association_football_fun_facts
+    - intent: tell_me_more
+    - action: utter_Association_football_fun_facts
+
+- story: about Reading_fun_facts
+  steps:
+     - intent: Reading_fun_facts
+     - action: utter_Reading_fun_facts
+
+- story: tell me more about Reading
+  steps:
+    - intent: Reading_fun_facts
+    - action: utter_Reading_fun_facts
+    - intent: tell_me_more
+    - action: utter_Reading_fun_facts
+
+- story: tell me more about Reading
+  steps:
+    - intent: Reading_fun_facts
+    - action: utter_Reading_fun_facts
+    - intent: tell_me_more
+    - action: utter_Reading_fun_facts
+    - intent: tell_me_more
+    - action: utter_Reading_fun_facts
+
+- story: about Iron_Man_(2008_film)_fun_facts
+  steps:
+     - intent: Iron_Man_(2008_film)_fun_facts
+     - action: utter_Iron_Man_(2008_film)_fun_facts
+
+- story: tell me more about Iron_Man_(2008_film)
+  steps:
+    - intent: Iron_Man_(2008_film)_fun_facts
+    - action: utter_Iron_Man_(2008_film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Iron_Man_(2008_film)_fun_facts
+
+- story: tell me more about Iron_Man_(2008_film)
+  steps:
+    - intent: Iron_Man_(2008_film)_fun_facts
+    - action: utter_Iron_Man_(2008_film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Iron_Man_(2008_film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Iron_Man_(2008_film)_fun_facts
+
+- story: about Michael_Jordan_fun_facts
+  steps:
+     - intent: Michael_Jordan_fun_facts
+     - action: utter_Michael_Jordan_fun_facts
+
+- story: tell me more about Michael_Jordan
+  steps:
+    - intent: Michael_Jordan_fun_facts
+    - action: utter_Michael_Jordan_fun_facts
+    - intent: tell_me_more
+    - action: utter_Michael_Jordan_fun_facts
+
+- story: tell me more about Michael_Jordan
+  steps:
+    - intent: Michael_Jordan_fun_facts
+    - action: utter_Michael_Jordan_fun_facts
+    - intent: tell_me_more
+    - action: utter_Michael_Jordan_fun_facts
+    - intent: tell_me_more
+    - action: utter_Michael_Jordan_fun_facts
+
+- story: about Amazon_(company)_fun_facts
+  steps:
+     - intent: Amazon_(company)_fun_facts
+     - action: utter_Amazon_(company)_fun_facts
+
+- story: tell me more about Amazon_(company)
+  steps:
+    - intent: Amazon_(company)_fun_facts
+    - action: utter_Amazon_(company)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Amazon_(company)_fun_facts
+
+- story: tell me more about Amazon_(company)
+  steps:
+    - intent: Amazon_(company)_fun_facts
+    - action: utter_Amazon_(company)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Amazon_(company)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Amazon_(company)_fun_facts
+
+- story: about Minecraft_fun_facts
+  steps:
+     - intent: Minecraft_fun_facts
+     - action: utter_Minecraft_fun_facts
+
+- story: tell me more about Minecraft
+  steps:
+    - intent: Minecraft_fun_facts
+    - action: utter_Minecraft_fun_facts
+    - intent: tell_me_more
+    - action: utter_Minecraft_fun_facts
+
+- story: tell me more about Minecraft
+  steps:
+    - intent: Minecraft_fun_facts
+    - action: utter_Minecraft_fun_facts
+    - intent: tell_me_more
+    - action: utter_Minecraft_fun_facts
+    - intent: tell_me_more
+    - action: utter_Minecraft_fun_facts
+
+- story: about Costume_fun_facts
+  steps:
+     - intent: Costume_fun_facts
+     - action: utter_Costume_fun_facts
+
+- story: tell me more about Costume
+  steps:
+    - intent: Costume_fun_facts
+    - action: utter_Costume_fun_facts
+    - intent: tell_me_more
+    - action: utter_Costume_fun_facts
+
+- story: tell me more about Costume
+  steps:
+    - intent: Costume_fun_facts
+    - action: utter_Costume_fun_facts
+    - intent: tell_me_more
+    - action: utter_Costume_fun_facts
+    - intent: tell_me_more
+    - action: utter_Costume_fun_facts
+
+- story: about Fantasy_fun_facts
+  steps:
+     - intent: Fantasy_fun_facts
+     - action: utter_Fantasy_fun_facts
+
+- story: tell me more about Fantasy
+  steps:
+    - intent: Fantasy_fun_facts
+    - action: utter_Fantasy_fun_facts
+    - intent: tell_me_more
+    - action: utter_Fantasy_fun_facts
+
+- story: tell me more about Fantasy
+  steps:
+    - intent: Fantasy_fun_facts
+    - action: utter_Fantasy_fun_facts
+    - intent: tell_me_more
+    - action: utter_Fantasy_fun_facts
+    - intent: tell_me_more
+    - action: utter_Fantasy_fun_facts
+
+- story: about Lego_fun_facts
+  steps:
+     - intent: Lego_fun_facts
+     - action: utter_Lego_fun_facts
+
+- story: tell me more about Lego
+  steps:
+    - intent: Lego_fun_facts
+    - action: utter_Lego_fun_facts
+    - intent: tell_me_more
+    - action: utter_Lego_fun_facts
+
+- story: tell me more about Lego
+  steps:
+    - intent: Lego_fun_facts
+    - action: utter_Lego_fun_facts
+    - intent: tell_me_more
+    - action: utter_Lego_fun_facts
+    - intent: tell_me_more
+    - action: utter_Lego_fun_facts
+
+- story: about Democratic_Party_(United_States)_fun_facts
+  steps:
+     - intent: Democratic_Party_(United_States)_fun_facts
+     - action: utter_Democratic_Party_(United_States)_fun_facts
+
+- story: tell me more about Democratic_Party_(United_States)
+  steps:
+    - intent: Democratic_Party_(United_States)_fun_facts
+    - action: utter_Democratic_Party_(United_States)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Democratic_Party_(United_States)_fun_facts
+
+- story: tell me more about Democratic_Party_(United_States)
+  steps:
+    - intent: Democratic_Party_(United_States)_fun_facts
+    - action: utter_Democratic_Party_(United_States)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Democratic_Party_(United_States)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Democratic_Party_(United_States)_fun_facts
+
+- story: about Google_fun_facts
+  steps:
+     - intent: Google_fun_facts
+     - action: utter_Google_fun_facts
+
+- story: tell me more about Google
+  steps:
+    - intent: Google_fun_facts
+    - action: utter_Google_fun_facts
+    - intent: tell_me_more
+    - action: utter_Google_fun_facts
+
+- story: tell me more about Google
+  steps:
+    - intent: Google_fun_facts
+    - action: utter_Google_fun_facts
+    - intent: tell_me_more
+    - action: utter_Google_fun_facts
+    - intent: tell_me_more
+    - action: utter_Google_fun_facts
+
+- story: about Clothing_fun_facts
+  steps:
+     - intent: Clothing_fun_facts
+     - action: utter_Clothing_fun_facts
+
+- story: tell me more about Clothing
+  steps:
+    - intent: Clothing_fun_facts
+    - action: utter_Clothing_fun_facts
+    - intent: tell_me_more
+    - action: utter_Clothing_fun_facts
+
+- story: tell me more about Clothing
+  steps:
+    - intent: Clothing_fun_facts
+    - action: utter_Clothing_fun_facts
+    - intent: tell_me_more
+    - action: utter_Clothing_fun_facts
+    - intent: tell_me_more
+    - action: utter_Clothing_fun_facts
+
+- story: about Shirt_fun_facts
+  steps:
+     - intent: Shirt_fun_facts
+     - action: utter_Shirt_fun_facts
+
+- story: tell me more about Shirt
+  steps:
+    - intent: Shirt_fun_facts
+    - action: utter_Shirt_fun_facts
+    - intent: tell_me_more
+    - action: utter_Shirt_fun_facts
+
+- story: tell me more about Shirt
+  steps:
+    - intent: Shirt_fun_facts
+    - action: utter_Shirt_fun_facts
+    - intent: tell_me_more
+    - action: utter_Shirt_fun_facts
+    - intent: tell_me_more
+    - action: utter_Shirt_fun_facts
+
+- story: about Comedy_fun_facts
+  steps:
+     - intent: Comedy_fun_facts
+     - action: utter_Comedy_fun_facts
+
+- story: tell me more about Comedy
+  steps:
+    - intent: Comedy_fun_facts
+    - action: utter_Comedy_fun_facts
+    - intent: tell_me_more
+    - action: utter_Comedy_fun_facts
+
+- story: tell me more about Comedy
+  steps:
+    - intent: Comedy_fun_facts
+    - action: utter_Comedy_fun_facts
+    - intent: tell_me_more
+    - action: utter_Comedy_fun_facts
+    - intent: tell_me_more
+    - action: utter_Comedy_fun_facts
+
+- story: about William_Shakespeare_fun_facts
+  steps:
+     - intent: William_Shakespeare_fun_facts
+     - action: utter_William_Shakespeare_fun_facts
+
+- story: tell me more about William_Shakespeare
+  steps:
+    - intent: William_Shakespeare_fun_facts
+    - action: utter_William_Shakespeare_fun_facts
+    - intent: tell_me_more
+    - action: utter_William_Shakespeare_fun_facts
+
+- story: tell me more about William_Shakespeare
+  steps:
+    - intent: William_Shakespeare_fun_facts
+    - action: utter_William_Shakespeare_fun_facts
+    - intent: tell_me_more
+    - action: utter_William_Shakespeare_fun_facts
+    - intent: tell_me_more
+    - action: utter_William_Shakespeare_fun_facts
+
+- story: about United_States_Senate_fun_facts
+  steps:
+     - intent: United_States_Senate_fun_facts
+     - action: utter_United_States_Senate_fun_facts
+
+- story: tell me more about United_States_Senate
+  steps:
+    - intent: United_States_Senate_fun_facts
+    - action: utter_United_States_Senate_fun_facts
+    - intent: tell_me_more
+    - action: utter_United_States_Senate_fun_facts
+
+- story: tell me more about United_States_Senate
+  steps:
+    - intent: United_States_Senate_fun_facts
+    - action: utter_United_States_Senate_fun_facts
+    - intent: tell_me_more
+    - action: utter_United_States_Senate_fun_facts
+    - intent: tell_me_more
+    - action: utter_United_States_Senate_fun_facts
+
+- story: about Frozen_(2013_film)_fun_facts
+  steps:
+     - intent: Frozen_(2013_film)_fun_facts
+     - action: utter_Frozen_(2013_film)_fun_facts
+
+- story: tell me more about Frozen_(2013_film)
+  steps:
+    - intent: Frozen_(2013_film)_fun_facts
+    - action: utter_Frozen_(2013_film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Frozen_(2013_film)_fun_facts
+
+- story: tell me more about Frozen_(2013_film)
+  steps:
+    - intent: Frozen_(2013_film)_fun_facts
+    - action: utter_Frozen_(2013_film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Frozen_(2013_film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Frozen_(2013_film)_fun_facts
+
+- story: about Library_fun_facts
+  steps:
+     - intent: Library_fun_facts
+     - action: utter_Library_fun_facts
+
+- story: tell me more about Library
+  steps:
+    - intent: Library_fun_facts
+    - action: utter_Library_fun_facts
+    - intent: tell_me_more
+    - action: utter_Library_fun_facts
+
+- story: tell me more about Library
+  steps:
+    - intent: Library_fun_facts
+    - action: utter_Library_fun_facts
+    - intent: tell_me_more
+    - action: utter_Library_fun_facts
+    - intent: tell_me_more
+    - action: utter_Library_fun_facts
+
+- story: about Universe_fun_facts
+  steps:
+     - intent: Universe_fun_facts
+     - action: utter_Universe_fun_facts
+
+- story: tell me more about Universe
+  steps:
+    - intent: Universe_fun_facts
+    - action: utter_Universe_fun_facts
+    - intent: tell_me_more
+    - action: utter_Universe_fun_facts
+
+- story: tell me more about Universe
+  steps:
+    - intent: Universe_fun_facts
+    - action: utter_Universe_fun_facts
+    - intent: tell_me_more
+    - action: utter_Universe_fun_facts
+    - intent: tell_me_more
+    - action: utter_Universe_fun_facts
+
+- story: about Swimming_fun_facts
+  steps:
+     - intent: Swimming_fun_facts
+     - action: utter_Swimming_fun_facts
+
+- story: tell me more about Swimming
+  steps:
+    - intent: Swimming_fun_facts
+    - action: utter_Swimming_fun_facts
+    - intent: tell_me_more
+    - action: utter_Swimming_fun_facts
+
+- story: tell me more about Swimming
+  steps:
+    - intent: Swimming_fun_facts
+    - action: utter_Swimming_fun_facts
+    - intent: tell_me_more
+    - action: utter_Swimming_fun_facts
+    - intent: tell_me_more
+    - action: utter_Swimming_fun_facts
+
+- story: about Golf_fun_facts
+  steps:
+     - intent: Golf_fun_facts
+     - action: utter_Golf_fun_facts
+
+- story: tell me more about Golf
+  steps:
+    - intent: Golf_fun_facts
+    - action: utter_Golf_fun_facts
+    - intent: tell_me_more
+    - action: utter_Golf_fun_facts
+
+- story: tell me more about Golf
+  steps:
+    - intent: Golf_fun_facts
+    - action: utter_Golf_fun_facts
+    - intent: tell_me_more
+    - action: utter_Golf_fun_facts
+    - intent: tell_me_more
+    - action: utter_Golf_fun_facts
+
+- story: about Softball_fun_facts
+  steps:
+     - intent: Softball_fun_facts
+     - action: utter_Softball_fun_facts
+
+- story: tell me more about Softball
+  steps:
+    - intent: Softball_fun_facts
+    - action: utter_Softball_fun_facts
+    - intent: tell_me_more
+    - action: utter_Softball_fun_facts
+
+- story: tell me more about Softball
+  steps:
+    - intent: Softball_fun_facts
+    - action: utter_Softball_fun_facts
+    - intent: tell_me_more
+    - action: utter_Softball_fun_facts
+    - intent: tell_me_more
+    - action: utter_Softball_fun_facts
+
+- story: about Incredibles_2_fun_facts
+  steps:
+     - intent: Incredibles_2_fun_facts
+     - action: utter_Incredibles_2_fun_facts
+
+- story: tell me more about Incredibles_2
+  steps:
+    - intent: Incredibles_2_fun_facts
+    - action: utter_Incredibles_2_fun_facts
+    - intent: tell_me_more
+    - action: utter_Incredibles_2_fun_facts
+
+- story: tell me more about Incredibles_2
+  steps:
+    - intent: Incredibles_2_fun_facts
+    - action: utter_Incredibles_2_fun_facts
+    - intent: tell_me_more
+    - action: utter_Incredibles_2_fun_facts
+    - intent: tell_me_more
+    - action: utter_Incredibles_2_fun_facts
+
+- story: about World_Series_fun_facts
+  steps:
+     - intent: World_Series_fun_facts
+     - action: utter_World_Series_fun_facts
+
+- story: tell me more about World_Series
+  steps:
+    - intent: World_Series_fun_facts
+    - action: utter_World_Series_fun_facts
+    - intent: tell_me_more
+    - action: utter_World_Series_fun_facts
+
+- story: tell me more about World_Series
+  steps:
+    - intent: World_Series_fun_facts
+    - action: utter_World_Series_fun_facts
+    - intent: tell_me_more
+    - action: utter_World_Series_fun_facts
+    - intent: tell_me_more
+    - action: utter_World_Series_fun_facts
+
+- story: about Chicago_Cubs_fun_facts
+  steps:
+     - intent: Chicago_Cubs_fun_facts
+     - action: utter_Chicago_Cubs_fun_facts
+
+- story: tell me more about Chicago_Cubs
+  steps:
+    - intent: Chicago_Cubs_fun_facts
+    - action: utter_Chicago_Cubs_fun_facts
+    - intent: tell_me_more
+    - action: utter_Chicago_Cubs_fun_facts
+
+- story: tell me more about Chicago_Cubs
+  steps:
+    - intent: Chicago_Cubs_fun_facts
+    - action: utter_Chicago_Cubs_fun_facts
+    - intent: tell_me_more
+    - action: utter_Chicago_Cubs_fun_facts
+    - intent: tell_me_more
+    - action: utter_Chicago_Cubs_fun_facts
+
+- story: about J._R._R._Tolkien_fun_facts
+  steps:
+     - intent: J._R._R._Tolkien_fun_facts
+     - action: utter_J._R._R._Tolkien_fun_facts
+
+- story: tell me more about J._R._R._Tolkien
+  steps:
+    - intent: J._R._R._Tolkien_fun_facts
+    - action: utter_J._R._R._Tolkien_fun_facts
+    - intent: tell_me_more
+    - action: utter_J._R._R._Tolkien_fun_facts
+
+- story: tell me more about J._R._R._Tolkien
+  steps:
+    - intent: J._R._R._Tolkien_fun_facts
+    - action: utter_J._R._R._Tolkien_fun_facts
+    - intent: tell_me_more
+    - action: utter_J._R._R._Tolkien_fun_facts
+    - intent: tell_me_more
+    - action: utter_J._R._R._Tolkien_fun_facts
+
+- story: about Congress_fun_facts
+  steps:
+     - intent: Congress_fun_facts
+     - action: utter_Congress_fun_facts
+
+- story: tell me more about Congress
+  steps:
+    - intent: Congress_fun_facts
+    - action: utter_Congress_fun_facts
+    - intent: tell_me_more
+    - action: utter_Congress_fun_facts
+
+- story: tell me more about Congress
+  steps:
+    - intent: Congress_fun_facts
+    - action: utter_Congress_fun_facts
+    - intent: tell_me_more
+    - action: utter_Congress_fun_facts
+    - intent: tell_me_more
+    - action: utter_Congress_fun_facts
+
+- story: about Poetry_fun_facts
+  steps:
+     - intent: Poetry_fun_facts
+     - action: utter_Poetry_fun_facts
+
+- story: tell me more about Poetry
+  steps:
+    - intent: Poetry_fun_facts
+    - action: utter_Poetry_fun_facts
+    - intent: tell_me_more
+    - action: utter_Poetry_fun_facts
+
+- story: tell me more about Poetry
+  steps:
+    - intent: Poetry_fun_facts
+    - action: utter_Poetry_fun_facts
+    - intent: tell_me_more
+    - action: utter_Poetry_fun_facts
+    - intent: tell_me_more
+    - action: utter_Poetry_fun_facts
+
+- story: about Fiction_fun_facts
+  steps:
+     - intent: Fiction_fun_facts
+     - action: utter_Fiction_fun_facts
+
+- story: tell me more about Fiction
+  steps:
+    - intent: Fiction_fun_facts
+    - action: utter_Fiction_fun_facts
+    - intent: tell_me_more
+    - action: utter_Fiction_fun_facts
+
+- story: tell me more about Fiction
+  steps:
+    - intent: Fiction_fun_facts
+    - action: utter_Fiction_fun_facts
+    - intent: tell_me_more
+    - action: utter_Fiction_fun_facts
+    - intent: tell_me_more
+    - action: utter_Fiction_fun_facts
+
+- story: about Rapping_fun_facts
+  steps:
+     - intent: Rapping_fun_facts
+     - action: utter_Rapping_fun_facts
+
+- story: tell me more about Rapping
+  steps:
+    - intent: Rapping_fun_facts
+    - action: utter_Rapping_fun_facts
+    - intent: tell_me_more
+    - action: utter_Rapping_fun_facts
+
+- story: tell me more about Rapping
+  steps:
+    - intent: Rapping_fun_facts
+    - action: utter_Rapping_fun_facts
+    - intent: tell_me_more
+    - action: utter_Rapping_fun_facts
+    - intent: tell_me_more
+    - action: utter_Rapping_fun_facts
+
+# - story: about Cinematography_fun_facts
+#   steps:
+#      - intent: Cinematography_fun_facts
+#      - action: utter_Cinematography_fun_facts
+
+# - story: tell me more about Cinematography
+#   steps:
+#     - intent: Cinematography_fun_facts
+#     - action: utter_Cinematography_fun_facts
+#     - intent: tell_me_more
+#     - action: utter_Cinematography_fun_facts
+
+# - story: tell me more about Cinematography
+#   steps:
+#     - intent: Cinematography_fun_facts
+#     - action: utter_Cinematography_fun_facts
+#     - intent: tell_me_more
+#     - action: utter_Cinematography_fun_facts
+#     - intent: tell_me_more
+#     - action: utter_Cinematography_fun_facts
+
+- story: about Animal_fun_facts
+  steps:
+     - intent: Animal_fun_facts
+     - action: utter_Animal_fun_facts
+
+- story: tell me more about Animal
+  steps:
+    - intent: Animal_fun_facts
+    - action: utter_Animal_fun_facts
+    - intent: tell_me_more
+    - action: utter_Animal_fun_facts
+
+- story: tell me more about Animal
+  steps:
+    - intent: Animal_fun_facts
+    - action: utter_Animal_fun_facts
+    - intent: tell_me_more
+    - action: utter_Animal_fun_facts
+    - intent: tell_me_more
+    - action: utter_Animal_fun_facts
+
+- story: about Target_Corporation_fun_facts
+  steps:
+     - intent: Target_Corporation_fun_facts
+     - action: utter_Target_Corporation_fun_facts
+
+- story: tell me more about Target_Corporation
+  steps:
+    - intent: Target_Corporation_fun_facts
+    - action: utter_Target_Corporation_fun_facts
+    - intent: tell_me_more
+    - action: utter_Target_Corporation_fun_facts
+
+- story: tell me more about Target_Corporation
+  steps:
+    - intent: Target_Corporation_fun_facts
+    - action: utter_Target_Corporation_fun_facts
+    - intent: tell_me_more
+    - action: utter_Target_Corporation_fun_facts
+    - intent: tell_me_more
+    - action: utter_Target_Corporation_fun_facts
+
+- story: about Meryl_Streep_fun_facts
+  steps:
+     - intent: Meryl_Streep_fun_facts
+     - action: utter_Meryl_Streep_fun_facts
+
+- story: tell me more about Meryl_Streep
+  steps:
+    - intent: Meryl_Streep_fun_facts
+    - action: utter_Meryl_Streep_fun_facts
+    - intent: tell_me_more
+    - action: utter_Meryl_Streep_fun_facts
+
+- story: tell me more about Meryl_Streep
+  steps:
+    - intent: Meryl_Streep_fun_facts
+    - action: utter_Meryl_Streep_fun_facts
+    - intent: tell_me_more
+    - action: utter_Meryl_Streep_fun_facts
+    - intent: tell_me_more
+    - action: utter_Meryl_Streep_fun_facts
+
+- story: about Hockey_fun_facts
+  steps:
+     - intent: Hockey_fun_facts
+     - action: utter_Hockey_fun_facts
+
+- story: tell me more about Hockey
+  steps:
+    - intent: Hockey_fun_facts
+    - action: utter_Hockey_fun_facts
+    - intent: tell_me_more
+    - action: utter_Hockey_fun_facts
+
+- story: tell me more about Hockey
+  steps:
+    - intent: Hockey_fun_facts
+    - action: utter_Hockey_fun_facts
+    - intent: tell_me_more
+    - action: utter_Hockey_fun_facts
+    - intent: tell_me_more
+    - action: utter_Hockey_fun_facts
+
+- story: about Call_of_Duty_fun_facts
+  steps:
+     - intent: Call_of_Duty_fun_facts
+     - action: utter_Call_of_Duty_fun_facts
+
+- story: tell me more about Call_of_Duty
+  steps:
+    - intent: Call_of_Duty_fun_facts
+    - action: utter_Call_of_Duty_fun_facts
+    - intent: tell_me_more
+    - action: utter_Call_of_Duty_fun_facts
+
+- story: tell me more about Call_of_Duty
+  steps:
+    - intent: Call_of_Duty_fun_facts
+    - action: utter_Call_of_Duty_fun_facts
+    - intent: tell_me_more
+    - action: utter_Call_of_Duty_fun_facts
+    - intent: tell_me_more
+    - action: utter_Call_of_Duty_fun_facts
+
+- story: about Politician_fun_facts
+  steps:
+     - intent: Politician_fun_facts
+     - action: utter_Politician_fun_facts
+
+- story: tell me more about Politician
+  steps:
+    - intent: Politician_fun_facts
+    - action: utter_Politician_fun_facts
+    - intent: tell_me_more
+    - action: utter_Politician_fun_facts
+
+- story: tell me more about Politician
+  steps:
+    - intent: Politician_fun_facts
+    - action: utter_Politician_fun_facts
+    - intent: tell_me_more
+    - action: utter_Politician_fun_facts
+    - intent: tell_me_more
+    - action: utter_Politician_fun_facts
+
+- story: about Tom_Cruise_fun_facts
+  steps:
+     - intent: Tom_Cruise_fun_facts
+     - action: utter_Tom_Cruise_fun_facts
+
+- story: tell me more about Tom_Cruise
+  steps:
+    - intent: Tom_Cruise_fun_facts
+    - action: utter_Tom_Cruise_fun_facts
+    - intent: tell_me_more
+    - action: utter_Tom_Cruise_fun_facts
+
+- story: tell me more about Tom_Cruise
+  steps:
+    - intent: Tom_Cruise_fun_facts
+    - action: utter_Tom_Cruise_fun_facts
+    - intent: tell_me_more
+    - action: utter_Tom_Cruise_fun_facts
+    - intent: tell_me_more
+    - action: utter_Tom_Cruise_fun_facts
+
+- story: about Jumanji_fun_facts
+  steps:
+     - intent: Jumanji_fun_facts
+     - action: utter_Jumanji_fun_facts
+
+- story: tell me more about Jumanji
+  steps:
+    - intent: Jumanji_fun_facts
+    - action: utter_Jumanji_fun_facts
+    - intent: tell_me_more
+    - action: utter_Jumanji_fun_facts
+
+- story: tell me more about Jumanji
+  steps:
+    - intent: Jumanji_fun_facts
+    - action: utter_Jumanji_fun_facts
+    - intent: tell_me_more
+    - action: utter_Jumanji_fun_facts
+    - intent: tell_me_more
+    - action: utter_Jumanji_fun_facts
+
+- story: about Hillary_Clinton_fun_facts
+  steps:
+     - intent: Hillary_Clinton_fun_facts
+     - action: utter_Hillary_Clinton_fun_facts
+
+- story: tell me more about Hillary_Clinton
+  steps:
+    - intent: Hillary_Clinton_fun_facts
+    - action: utter_Hillary_Clinton_fun_facts
+    - intent: tell_me_more
+    - action: utter_Hillary_Clinton_fun_facts
+
+- story: tell me more about Hillary_Clinton
+  steps:
+    - intent: Hillary_Clinton_fun_facts
+    - action: utter_Hillary_Clinton_fun_facts
+    - intent: tell_me_more
+    - action: utter_Hillary_Clinton_fun_facts
+    - intent: tell_me_more
+    - action: utter_Hillary_Clinton_fun_facts
+
+- story: about Moon_fun_facts
+  steps:
+     - intent: Moon_fun_facts
+     - action: utter_Moon_fun_facts
+
+- story: tell me more about Moon
+  steps:
+    - intent: Moon_fun_facts
+    - action: utter_Moon_fun_facts
+    - intent: tell_me_more
+    - action: utter_Moon_fun_facts
+
+- story: tell me more about Moon
+  steps:
+    - intent: Moon_fun_facts
+    - action: utter_Moon_fun_facts
+    - intent: tell_me_more
+    - action: utter_Moon_fun_facts
+    - intent: tell_me_more
+    - action: utter_Moon_fun_facts
+
+- story: about Piano_fun_facts
+  steps:
+     - intent: Piano_fun_facts
+     - action: utter_Piano_fun_facts
+
+- story: tell me more about Piano
+  steps:
+    - intent: Piano_fun_facts
+    - action: utter_Piano_fun_facts
+    - intent: tell_me_more
+    - action: utter_Piano_fun_facts
+
+- story: tell me more about Piano
+  steps:
+    - intent: Piano_fun_facts
+    - action: utter_Piano_fun_facts
+    - intent: tell_me_more
+    - action: utter_Piano_fun_facts
+    - intent: tell_me_more
+    - action: utter_Piano_fun_facts
+
+- story: about Spotify_fun_facts
+  steps:
+     - intent: Spotify_fun_facts
+     - action: utter_Spotify_fun_facts
+
+- story: tell me more about Spotify
+  steps:
+    - intent: Spotify_fun_facts
+    - action: utter_Spotify_fun_facts
+    - intent: tell_me_more
+    - action: utter_Spotify_fun_facts
+
+- story: tell me more about Spotify
+  steps:
+    - intent: Spotify_fun_facts
+    - action: utter_Spotify_fun_facts
+    - intent: tell_me_more
+    - action: utter_Spotify_fun_facts
+    - intent: tell_me_more
+    - action: utter_Spotify_fun_facts
+
+- story: about Tesla,_Inc._fun_facts
+  steps:
+     - intent: Tesla,_Inc._fun_facts
+     - action: utter_Tesla,_Inc._fun_facts
+
+- story: tell me more about Tesla,_Inc.
+  steps:
+    - intent: Tesla,_Inc._fun_facts
+    - action: utter_Tesla,_Inc._fun_facts
+    - intent: tell_me_more
+    - action: utter_Tesla,_Inc._fun_facts
+
+- story: tell me more about Tesla,_Inc.
+  steps:
+    - intent: Tesla,_Inc._fun_facts
+    - action: utter_Tesla,_Inc._fun_facts
+    - intent: tell_me_more
+    - action: utter_Tesla,_Inc._fun_facts
+    - intent: tell_me_more
+    - action: utter_Tesla,_Inc._fun_facts
+
+- story: about Republican_Party_(United_States)_fun_facts
+  steps:
+     - intent: Republican_Party_(United_States)_fun_facts
+     - action: utter_Republican_Party_(United_States)_fun_facts
+
+- story: tell me more about Republican_Party_(United_States)
+  steps:
+    - intent: Republican_Party_(United_States)_fun_facts
+    - action: utter_Republican_Party_(United_States)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Republican_Party_(United_States)_fun_facts
+
+- story: tell me more about Republican_Party_(United_States)
+  steps:
+    - intent: Republican_Party_(United_States)_fun_facts
+    - action: utter_Republican_Party_(United_States)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Republican_Party_(United_States)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Republican_Party_(United_States)_fun_facts
+
+- story: about Star_Wars_fun_facts
+  steps:
+     - intent: Star_Wars_fun_facts
+     - action: utter_Star_Wars_fun_facts
+
+- story: tell me more about Star_Wars
+  steps:
+    - intent: Star_Wars_fun_facts
+    - action: utter_Star_Wars_fun_facts
+    - intent: tell_me_more
+    - action: utter_Star_Wars_fun_facts
+
+- story: tell me more about Star_Wars
+  steps:
+    - intent: Star_Wars_fun_facts
+    - action: utter_Star_Wars_fun_facts
+    - intent: tell_me_more
+    - action: utter_Star_Wars_fun_facts
+    - intent: tell_me_more
+    - action: utter_Star_Wars_fun_facts
+
+- story: about Xbox_fun_facts
+  steps:
+     - intent: Xbox_fun_facts
+     - action: utter_Xbox_fun_facts
+
+- story: tell me more about Xbox
+  steps:
+    - intent: Xbox_fun_facts
+    - action: utter_Xbox_fun_facts
+    - intent: tell_me_more
+    - action: utter_Xbox_fun_facts
+
+- story: tell me more about Xbox
+  steps:
+    - intent: Xbox_fun_facts
+    - action: utter_Xbox_fun_facts
+    - intent: tell_me_more
+    - action: utter_Xbox_fun_facts
+    - intent: tell_me_more
+    - action: utter_Xbox_fun_facts
+
+- story: about Boot_fun_facts
+  steps:
+     - intent: Boot_fun_facts
+     - action: utter_Boot_fun_facts
+
+- story: tell me more about Boot
+  steps:
+    - intent: Boot_fun_facts
+    - action: utter_Boot_fun_facts
+    - intent: tell_me_more
+    - action: utter_Boot_fun_facts
+
+- story: tell me more about Boot
+  steps:
+    - intent: Boot_fun_facts
+    - action: utter_Boot_fun_facts
+    - intent: tell_me_more
+    - action: utter_Boot_fun_facts
+    - intent: tell_me_more
+    - action: utter_Boot_fun_facts
+
+- story: about Robot_fun_facts
+  steps:
+     - intent: Robot_fun_facts
+     - action: utter_Robot_fun_facts
+
+- story: tell me more about Robot
+  steps:
+    - intent: Robot_fun_facts
+    - action: utter_Robot_fun_facts
+    - intent: tell_me_more
+    - action: utter_Robot_fun_facts
+
+- story: tell me more about Robot
+  steps:
+    - intent: Robot_fun_facts
+    - action: utter_Robot_fun_facts
+    - intent: tell_me_more
+    - action: utter_Robot_fun_facts
+    - intent: tell_me_more
+    - action: utter_Robot_fun_facts
+
+- story: about Box_office_fun_facts
+  steps:
+     - intent: Box_office_fun_facts
+     - action: utter_Box_office_fun_facts
+
+- story: tell me more about Box_office
+  steps:
+    - intent: Box_office_fun_facts
+    - action: utter_Box_office_fun_facts
+    - intent: tell_me_more
+    - action: utter_Box_office_fun_facts
+
+- story: tell me more about Box_office
+  steps:
+    - intent: Box_office_fun_facts
+    - action: utter_Box_office_fun_facts
+    - intent: tell_me_more
+    - action: utter_Box_office_fun_facts
+    - intent: tell_me_more
+    - action: utter_Box_office_fun_facts
+
+- story: about Dr._Seuss_fun_facts
+  steps:
+     - intent: Dr._Seuss_fun_facts
+     - action: utter_Dr._Seuss_fun_facts
+
+- story: tell me more about Dr._Seuss
+  steps:
+    - intent: Dr._Seuss_fun_facts
+    - action: utter_Dr._Seuss_fun_facts
+    - intent: tell_me_more
+    - action: utter_Dr._Seuss_fun_facts
+
+- story: tell me more about Dr._Seuss
+  steps:
+    - intent: Dr._Seuss_fun_facts
+    - action: utter_Dr._Seuss_fun_facts
+    - intent: tell_me_more
+    - action: utter_Dr._Seuss_fun_facts
+    - intent: tell_me_more
+    - action: utter_Dr._Seuss_fun_facts
+
+- story: about Mars_fun_facts
+  steps:
+     - intent: Mars_fun_facts
+     - action: utter_Mars_fun_facts
+
+- story: tell me more about Mars
+  steps:
+    - intent: Mars_fun_facts
+    - action: utter_Mars_fun_facts
+    - intent: tell_me_more
+    - action: utter_Mars_fun_facts
+
+- story: tell me more about Mars
+  steps:
+    - intent: Mars_fun_facts
+    - action: utter_Mars_fun_facts
+    - intent: tell_me_more
+    - action: utter_Mars_fun_facts
+    - intent: tell_me_more
+    - action: utter_Mars_fun_facts
+
+- story: about Academy_Awards_fun_facts
+  steps:
+     - intent: Academy_Awards_fun_facts
+     - action: utter_Academy_Awards_fun_facts
+
+- story: tell me more about Academy_Awards
+  steps:
+    - intent: Academy_Awards_fun_facts
+    - action: utter_Academy_Awards_fun_facts
+    - intent: tell_me_more
+    - action: utter_Academy_Awards_fun_facts
+
+- story: tell me more about Academy_Awards
+  steps:
+    - intent: Academy_Awards_fun_facts
+    - action: utter_Academy_Awards_fun_facts
+    - intent: tell_me_more
+    - action: utter_Academy_Awards_fun_facts
+    - intent: tell_me_more
+    - action: utter_Academy_Awards_fun_facts
+
+- story: about Cat_fun_facts
+  steps:
+     - intent: Cat_fun_facts
+     - action: utter_Cat_fun_facts
+
+- story: tell me more about Cat
+  steps:
+    - intent: Cat_fun_facts
+    - action: utter_Cat_fun_facts
+    - intent: tell_me_more
+    - action: utter_Cat_fun_facts
+
+- story: tell me more about Cat
+  steps:
+    - intent: Cat_fun_facts
+    - action: utter_Cat_fun_facts
+    - intent: tell_me_more
+    - action: utter_Cat_fun_facts
+    - intent: tell_me_more
+    - action: utter_Cat_fun_facts
+
+- story: about Reddit_fun_facts
+  steps:
+     - intent: Reddit_fun_facts
+     - action: utter_Reddit_fun_facts
+
+- story: tell me more about Reddit
+  steps:
+    - intent: Reddit_fun_facts
+    - action: utter_Reddit_fun_facts
+    - intent: tell_me_more
+    - action: utter_Reddit_fun_facts
+
+- story: tell me more about Reddit
+  steps:
+    - intent: Reddit_fun_facts
+    - action: utter_Reddit_fun_facts
+    - intent: tell_me_more
+    - action: utter_Reddit_fun_facts
+    - intent: tell_me_more
+    - action: utter_Reddit_fun_facts
+
+- story: about Physics_fun_facts
+  steps:
+     - intent: Physics_fun_facts
+     - action: utter_Physics_fun_facts
+
+- story: tell me more about Physics
+  steps:
+    - intent: Physics_fun_facts
+    - action: utter_Physics_fun_facts
+    - intent: tell_me_more
+    - action: utter_Physics_fun_facts
+
+- story: tell me more about Physics
+  steps:
+    - intent: Physics_fun_facts
+    - action: utter_Physics_fun_facts
+    - intent: tell_me_more
+    - action: utter_Physics_fun_facts
+    - intent: tell_me_more
+    - action: utter_Physics_fun_facts
+
+- story: about Tennis_fun_facts
+  steps:
+     - intent: Tennis_fun_facts
+     - action: utter_Tennis_fun_facts
+
+- story: tell me more about Tennis
+  steps:
+    - intent: Tennis_fun_facts
+    - action: utter_Tennis_fun_facts
+    - intent: tell_me_more
+    - action: utter_Tennis_fun_facts
+
+- story: tell me more about Tennis
+  steps:
+    - intent: Tennis_fun_facts
+    - action: utter_Tennis_fun_facts
+    - intent: tell_me_more
+    - action: utter_Tennis_fun_facts
+    - intent: tell_me_more
+    - action: utter_Tennis_fun_facts
+
+- story: about Literature_fun_facts
+  steps:
+     - intent: Literature_fun_facts
+     - action: utter_Literature_fun_facts
+
+- story: tell me more about Literature
+  steps:
+    - intent: Literature_fun_facts
+    - action: utter_Literature_fun_facts
+    - intent: tell_me_more
+    - action: utter_Literature_fun_facts
+
+- story: tell me more about Literature
+  steps:
+    - intent: Literature_fun_facts
+    - action: utter_Literature_fun_facts
+    - intent: tell_me_more
+    - action: utter_Literature_fun_facts
+    - intent: tell_me_more
+    - action: utter_Literature_fun_facts
+
+- story: about Taylor_Swift_fun_facts
+  steps:
+     - intent: Taylor_Swift_fun_facts
+     - action: utter_Taylor_Swift_fun_facts
+
+- story: tell me more about Taylor_Swift
+  steps:
+    - intent: Taylor_Swift_fun_facts
+    - action: utter_Taylor_Swift_fun_facts
+    - intent: tell_me_more
+    - action: utter_Taylor_Swift_fun_facts
+
+- story: tell me more about Taylor_Swift
+  steps:
+    - intent: Taylor_Swift_fun_facts
+    - action: utter_Taylor_Swift_fun_facts
+    - intent: tell_me_more
+    - action: utter_Taylor_Swift_fun_facts
+    - intent: tell_me_more
+    - action: utter_Taylor_Swift_fun_facts
+
+- story: about IPhone_fun_facts
+  steps:
+     - intent: IPhone_fun_facts
+     - action: utter_IPhone_fun_facts
+
+- story: tell me more about IPhone
+  steps:
+    - intent: IPhone_fun_facts
+    - action: utter_IPhone_fun_facts
+    - intent: tell_me_more
+    - action: utter_IPhone_fun_facts
+
+- story: tell me more about IPhone
+  steps:
+    - intent: IPhone_fun_facts
+    - action: utter_IPhone_fun_facts
+    - intent: tell_me_more
+    - action: utter_IPhone_fun_facts
+    - intent: tell_me_more
+    - action: utter_IPhone_fun_facts
+
+- story: about Gymnastics_fun_facts
+  steps:
+     - intent: Gymnastics_fun_facts
+     - action: utter_Gymnastics_fun_facts
+
+- story: tell me more about Gymnastics
+  steps:
+    - intent: Gymnastics_fun_facts
+    - action: utter_Gymnastics_fun_facts
+    - intent: tell_me_more
+    - action: utter_Gymnastics_fun_facts
+
+- story: tell me more about Gymnastics
+  steps:
+    - intent: Gymnastics_fun_facts
+    - action: utter_Gymnastics_fun_facts
+    - intent: tell_me_more
+    - action: utter_Gymnastics_fun_facts
+    - intent: tell_me_more
+    - action: utter_Gymnastics_fun_facts
+
+- story: about Pop_music_fun_facts
+  steps:
+     - intent: Pop_music_fun_facts
+     - action: utter_Pop_music_fun_facts
+
+- story: tell me more about Pop_music
+  steps:
+    - intent: Pop_music_fun_facts
+    - action: utter_Pop_music_fun_facts
+    - intent: tell_me_more
+    - action: utter_Pop_music_fun_facts
+
+- story: tell me more about Pop_music
+  steps:
+    - intent: Pop_music_fun_facts
+    - action: utter_Pop_music_fun_facts
+    - intent: tell_me_more
+    - action: utter_Pop_music_fun_facts
+    - intent: tell_me_more
+    - action: utter_Pop_music_fun_facts
+
+- story: about Barack_Obama_fun_facts
+  steps:
+     - intent: Barack_Obama_fun_facts
+     - action: utter_Barack_Obama_fun_facts
+
+- story: tell me more about Barack_Obama
+  steps:
+    - intent: Barack_Obama_fun_facts
+    - action: utter_Barack_Obama_fun_facts
+    - intent: tell_me_more
+    - action: utter_Barack_Obama_fun_facts
+
+- story: tell me more about Barack_Obama
+  steps:
+    - intent: Barack_Obama_fun_facts
+    - action: utter_Barack_Obama_fun_facts
+    - intent: tell_me_more
+    - action: utter_Barack_Obama_fun_facts
+    - intent: tell_me_more
+    - action: utter_Barack_Obama_fun_facts
+
+- story: about Steven_Spielberg_fun_facts
+  steps:
+     - intent: Steven_Spielberg_fun_facts
+     - action: utter_Steven_Spielberg_fun_facts
+
+- story: tell me more about Steven_Spielberg
+  steps:
+    - intent: Steven_Spielberg_fun_facts
+    - action: utter_Steven_Spielberg_fun_facts
+    - intent: tell_me_more
+    - action: utter_Steven_Spielberg_fun_facts
+
+- story: tell me more about Steven_Spielberg
+  steps:
+    - intent: Steven_Spielberg_fun_facts
+    - action: utter_Steven_Spielberg_fun_facts
+    - intent: tell_me_more
+    - action: utter_Steven_Spielberg_fun_facts
+    - intent: tell_me_more
+    - action: utter_Steven_Spielberg_fun_facts
+
+- story: about FIFA_World_Cup_fun_facts
+  steps:
+     - intent: FIFA_World_Cup_fun_facts
+     - action: utter_FIFA_World_Cup_fun_facts
+
+- story: tell me more about FIFA_World_Cup
+  steps:
+    - intent: FIFA_World_Cup_fun_facts
+    - action: utter_FIFA_World_Cup_fun_facts
+    - intent: tell_me_more
+    - action: utter_FIFA_World_Cup_fun_facts
+
+- story: tell me more about FIFA_World_Cup
+  steps:
+    - intent: FIFA_World_Cup_fun_facts
+    - action: utter_FIFA_World_Cup_fun_facts
+    - intent: tell_me_more
+    - action: utter_FIFA_World_Cup_fun_facts
+    - intent: tell_me_more
+    - action: utter_FIFA_World_Cup_fun_facts
+
+- story: about Game_of_Thrones_fun_facts
+  steps:
+     - intent: Game_of_Thrones_fun_facts
+     - action: utter_Game_of_Thrones_fun_facts
+
+- story: tell me more about Game_of_Thrones
+  steps:
+    - intent: Game_of_Thrones_fun_facts
+    - action: utter_Game_of_Thrones_fun_facts
+    - intent: tell_me_more
+    - action: utter_Game_of_Thrones_fun_facts
+
+- story: tell me more about Game_of_Thrones
+  steps:
+    - intent: Game_of_Thrones_fun_facts
+    - action: utter_Game_of_Thrones_fun_facts
+    - intent: tell_me_more
+    - action: utter_Game_of_Thrones_fun_facts
+    - intent: tell_me_more
+    - action: utter_Game_of_Thrones_fun_facts
+
+- story: about Trousers_fun_facts
+  steps:
+     - intent: Trousers_fun_facts
+     - action: utter_Trousers_fun_facts
+
+- story: tell me more about Trousers
+  steps:
+    - intent: Trousers_fun_facts
+    - action: utter_Trousers_fun_facts
+    - intent: tell_me_more
+    - action: utter_Trousers_fun_facts
+
+- story: tell me more about Trousers
+  steps:
+    - intent: Trousers_fun_facts
+    - action: utter_Trousers_fun_facts
+    - intent: tell_me_more
+    - action: utter_Trousers_fun_facts
+    - intent: tell_me_more
+    - action: utter_Trousers_fun_facts
+
+- story: about Kim_Kardashian_fun_facts
+  steps:
+     - intent: Kim_Kardashian_fun_facts
+     - action: utter_Kim_Kardashian_fun_facts
+
+- story: tell me more about Kim_Kardashian
+  steps:
+    - intent: Kim_Kardashian_fun_facts
+    - action: utter_Kim_Kardashian_fun_facts
+    - intent: tell_me_more
+    - action: utter_Kim_Kardashian_fun_facts
+
+- story: tell me more about Kim_Kardashian
+  steps:
+    - intent: Kim_Kardashian_fun_facts
+    - action: utter_Kim_Kardashian_fun_facts
+    - intent: tell_me_more
+    - action: utter_Kim_Kardashian_fun_facts
+    - intent: tell_me_more
+    - action: utter_Kim_Kardashian_fun_facts
+
+- story: about Soundtrack_fun_facts
+  steps:
+     - intent: Soundtrack_fun_facts
+     - action: utter_Soundtrack_fun_facts
+
+- story: tell me more about Soundtrack
+  steps:
+    - intent: Soundtrack_fun_facts
+    - action: utter_Soundtrack_fun_facts
+    - intent: tell_me_more
+    - action: utter_Soundtrack_fun_facts
+
+- story: tell me more about Soundtrack
+  steps:
+    - intent: Soundtrack_fun_facts
+    - action: utter_Soundtrack_fun_facts
+    - intent: tell_me_more
+    - action: utter_Soundtrack_fun_facts
+    - intent: tell_me_more
+    - action: utter_Soundtrack_fun_facts
+
+- story: about Bible_fun_facts
+  steps:
+     - intent: Bible_fun_facts
+     - action: utter_Bible_fun_facts
+
+- story: tell me more about Bible
+  steps:
+    - intent: Bible_fun_facts
+    - action: utter_Bible_fun_facts
+    - intent: tell_me_more
+    - action: utter_Bible_fun_facts
+
+- story: tell me more about Bible
+  steps:
+    - intent: Bible_fun_facts
+    - action: utter_Bible_fun_facts
+    - intent: tell_me_more
+    - action: utter_Bible_fun_facts
+    - intent: tell_me_more
+    - action: utter_Bible_fun_facts
+
+- story: about PlayStation_fun_facts
+  steps:
+     - intent: PlayStation_fun_facts
+     - action: utter_PlayStation_fun_facts
+
+- story: tell me more about PlayStation
+  steps:
+    - intent: PlayStation_fun_facts
+    - action: utter_PlayStation_fun_facts
+    - intent: tell_me_more
+    - action: utter_PlayStation_fun_facts
+
+- story: tell me more about PlayStation
+  steps:
+    - intent: PlayStation_fun_facts
+    - action: utter_PlayStation_fun_facts
+    - intent: tell_me_more
+    - action: utter_PlayStation_fun_facts
+    - intent: tell_me_more
+    - action: utter_PlayStation_fun_facts
+
+- story: about Adele_fun_facts
+  steps:
+     - intent: Adele_fun_facts
+     - action: utter_Adele_fun_facts
+
+- story: tell me more about Adele
+  steps:
+    - intent: Adele_fun_facts
+    - action: utter_Adele_fun_facts
+    - intent: tell_me_more
+    - action: utter_Adele_fun_facts
+
+- story: tell me more about Adele
+  steps:
+    - intent: Adele_fun_facts
+    - action: utter_Adele_fun_facts
+    - intent: tell_me_more
+    - action: utter_Adele_fun_facts
+    - intent: tell_me_more
+    - action: utter_Adele_fun_facts
+
+- story: about Green_Bay_Packers_fun_facts
+  steps:
+     - intent: Green_Bay_Packers_fun_facts
+     - action: utter_Green_Bay_Packers_fun_facts
+
+- story: tell me more about Green_Bay_Packers
+  steps:
+    - intent: Green_Bay_Packers_fun_facts
+    - action: utter_Green_Bay_Packers_fun_facts
+    - intent: tell_me_more
+    - action: utter_Green_Bay_Packers_fun_facts
+
+- story: tell me more about Green_Bay_Packers
+  steps:
+    - intent: Green_Bay_Packers_fun_facts
+    - action: utter_Green_Bay_Packers_fun_facts
+    - intent: tell_me_more
+    - action: utter_Green_Bay_Packers_fun_facts
+    - intent: tell_me_more
+    - action: utter_Green_Bay_Packers_fun_facts
+
+- story: about The_Walt_Disney_Company_fun_facts
+  steps:
+     - intent: The_Walt_Disney_Company_fun_facts
+     - action: utter_The_Walt_Disney_Company_fun_facts
+
+- story: tell me more about The_Walt_Disney_Company
+  steps:
+    - intent: The_Walt_Disney_Company_fun_facts
+    - action: utter_The_Walt_Disney_Company_fun_facts
+    - intent: tell_me_more
+    - action: utter_The_Walt_Disney_Company_fun_facts
+
+- story: tell me more about The_Walt_Disney_Company
+  steps:
+    - intent: The_Walt_Disney_Company_fun_facts
+    - action: utter_The_Walt_Disney_Company_fun_facts
+    - intent: tell_me_more
+    - action: utter_The_Walt_Disney_Company_fun_facts
+    - intent: tell_me_more
+    - action: utter_The_Walt_Disney_Company_fun_facts
+
+- story: about New_York_Yankees_fun_facts
+  steps:
+     - intent: New_York_Yankees_fun_facts
+     - action: utter_New_York_Yankees_fun_facts
+
+- story: tell me more about New_York_Yankees
+  steps:
+    - intent: New_York_Yankees_fun_facts
+    - action: utter_New_York_Yankees_fun_facts
+    - intent: tell_me_more
+    - action: utter_New_York_Yankees_fun_facts
+
+- story: tell me more about New_York_Yankees
+  steps:
+    - intent: New_York_Yankees_fun_facts
+    - action: utter_New_York_Yankees_fun_facts
+    - intent: tell_me_more
+    - action: utter_New_York_Yankees_fun_facts
+    - intent: tell_me_more
+    - action: utter_New_York_Yankees_fun_facts
+
+- story: about Roger_Federer_fun_facts
+  steps:
+     - intent: Roger_Federer_fun_facts
+     - action: utter_Roger_Federer_fun_facts
+
+- story: tell me more about Roger_Federer
+  steps:
+    - intent: Roger_Federer_fun_facts
+    - action: utter_Roger_Federer_fun_facts
+    - intent: tell_me_more
+    - action: utter_Roger_Federer_fun_facts
+
+- story: tell me more about Roger_Federer
+  steps:
+    - intent: Roger_Federer_fun_facts
+    - action: utter_Roger_Federer_fun_facts
+    - intent: tell_me_more
+    - action: utter_Roger_Federer_fun_facts
+    - intent: tell_me_more
+    - action: utter_Roger_Federer_fun_facts
+
+- story: about Prime_minister_fun_facts
+  steps:
+     - intent: Prime_minister_fun_facts
+     - action: utter_Prime_minister_fun_facts
+
+- story: tell me more about Prime_minister
+  steps:
+    - intent: Prime_minister_fun_facts
+    - action: utter_Prime_minister_fun_facts
+    - intent: tell_me_more
+    - action: utter_Prime_minister_fun_facts
+
+- story: tell me more about Prime_minister
+  steps:
+    - intent: Prime_minister_fun_facts
+    - action: utter_Prime_minister_fun_facts
+    - intent: tell_me_more
+    - action: utter_Prime_minister_fun_facts
+    - intent: tell_me_more
+    - action: utter_Prime_minister_fun_facts
+
+- story: about Michael_Jackson_fun_facts
+  steps:
+     - intent: Michael_Jackson_fun_facts
+     - action: utter_Michael_Jackson_fun_facts
+
+- story: tell me more about Michael_Jackson
+  steps:
+    - intent: Michael_Jackson_fun_facts
+    - action: utter_Michael_Jackson_fun_facts
+    - intent: tell_me_more
+    - action: utter_Michael_Jackson_fun_facts
+
+- story: tell me more about Michael_Jackson
+  steps:
+    - intent: Michael_Jackson_fun_facts
+    - action: utter_Michael_Jackson_fun_facts
+    - intent: tell_me_more
+    - action: utter_Michael_Jackson_fun_facts
+    - intent: tell_me_more
+    - action: utter_Michael_Jackson_fun_facts
+
+- story: about Walt_Disney_Pictures_fun_facts
+  steps:
+     - intent: Walt_Disney_Pictures_fun_facts
+     - action: utter_Walt_Disney_Pictures_fun_facts
+
+- story: tell me more about Walt_Disney_Pictures
+  steps:
+    - intent: Walt_Disney_Pictures_fun_facts
+    - action: utter_Walt_Disney_Pictures_fun_facts
+    - intent: tell_me_more
+    - action: utter_Walt_Disney_Pictures_fun_facts
+
+- story: tell me more about Walt_Disney_Pictures
+  steps:
+    - intent: Walt_Disney_Pictures_fun_facts
+    - action: utter_Walt_Disney_Pictures_fun_facts
+    - intent: tell_me_more
+    - action: utter_Walt_Disney_Pictures_fun_facts
+    - intent: tell_me_more
+    - action: utter_Walt_Disney_Pictures_fun_facts
+
+- story: about Chess_fun_facts
+  steps:
+     - intent: Chess_fun_facts
+     - action: utter_Chess_fun_facts
+
+- story: tell me more about Chess
+  steps:
+    - intent: Chess_fun_facts
+    - action: utter_Chess_fun_facts
+    - intent: tell_me_more
+    - action: utter_Chess_fun_facts
+
+- story: tell me more about Chess
+  steps:
+    - intent: Chess_fun_facts
+    - action: utter_Chess_fun_facts
+    - intent: tell_me_more
+    - action: utter_Chess_fun_facts
+    - intent: tell_me_more
+    - action: utter_Chess_fun_facts
+
+- story: about Wonder_Woman_(2017_film)_fun_facts
+  steps:
+     - intent: Wonder_Woman_(2017_film)_fun_facts
+     - action: utter_Wonder_Woman_(2017_film)_fun_facts
+
+- story: tell me more about Wonder_Woman_(2017_film)
+  steps:
+    - intent: Wonder_Woman_(2017_film)_fun_facts
+    - action: utter_Wonder_Woman_(2017_film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Wonder_Woman_(2017_film)_fun_facts
+
+- story: tell me more about Wonder_Woman_(2017_film)
+  steps:
+    - intent: Wonder_Woman_(2017_film)_fun_facts
+    - action: utter_Wonder_Woman_(2017_film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Wonder_Woman_(2017_film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Wonder_Woman_(2017_film)_fun_facts
+
+- story: about Pet_fun_facts
+  steps:
+     - intent: Pet_fun_facts
+     - action: utter_Pet_fun_facts
+
+- story: tell me more about Pet
+  steps:
+    - intent: Pet_fun_facts
+    - action: utter_Pet_fun_facts
+    - intent: tell_me_more
+    - action: utter_Pet_fun_facts
+
+- story: tell me more about Pet
+  steps:
+    - intent: Pet_fun_facts
+    - action: utter_Pet_fun_facts
+    - intent: tell_me_more
+    - action: utter_Pet_fun_facts
+    - intent: tell_me_more
+    - action: utter_Pet_fun_facts
+
+- story: about Scientist_fun_facts
+  steps:
+     - intent: Scientist_fun_facts
+     - action: utter_Scientist_fun_facts
+
+- story: tell me more about Scientist
+  steps:
+    - intent: Scientist_fun_facts
+    - action: utter_Scientist_fun_facts
+    - intent: tell_me_more
+    - action: utter_Scientist_fun_facts
+
+- story: tell me more about Scientist
+  steps:
+    - intent: Scientist_fun_facts
+    - action: utter_Scientist_fun_facts
+    - intent: tell_me_more
+    - action: utter_Scientist_fun_facts
+    - intent: tell_me_more
+    - action: utter_Scientist_fun_facts
+
+- story: about Harry_Potter_fun_facts
+  steps:
+     - intent: Harry_Potter_fun_facts
+     - action: utter_Harry_Potter_fun_facts
+
+- story: tell me more about Harry_Potter
+  steps:
+    - intent: Harry_Potter_fun_facts
+    - action: utter_Harry_Potter_fun_facts
+    - intent: tell_me_more
+    - action: utter_Harry_Potter_fun_facts
+
+- story: tell me more about Harry_Potter
+  steps:
+    - intent: Harry_Potter_fun_facts
+    - action: utter_Harry_Potter_fun_facts
+    - intent: tell_me_more
+    - action: utter_Harry_Potter_fun_facts
+    - intent: tell_me_more
+    - action: utter_Harry_Potter_fun_facts
+
+- story: about Violin_fun_facts
+  steps:
+     - intent: Violin_fun_facts
+     - action: utter_Violin_fun_facts
+
+- story: tell me more about Violin
+  steps:
+    - intent: Violin_fun_facts
+    - action: utter_Violin_fun_facts
+    - intent: tell_me_more
+    - action: utter_Violin_fun_facts
+
+- story: tell me more about Violin
+  steps:
+    - intent: Violin_fun_facts
+    - action: utter_Violin_fun_facts
+    - intent: tell_me_more
+    - action: utter_Violin_fun_facts
+    - intent: tell_me_more
+    - action: utter_Violin_fun_facts
+
+- story: about Thor_(film)_fun_facts
+  steps:
+     - intent: Thor_(film)_fun_facts
+     - action: utter_Thor_(film)_fun_facts
+
+- story: tell me more about Thor_(film)
+  steps:
+    - intent: Thor_(film)_fun_facts
+    - action: utter_Thor_(film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Thor_(film)_fun_facts
+
+- story: tell me more about Thor_(film)
+  steps:
+    - intent: Thor_(film)_fun_facts
+    - action: utter_Thor_(film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Thor_(film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Thor_(film)_fun_facts
+
+- story: about Comic_book_fun_facts
+  steps:
+     - intent: Comic_book_fun_facts
+     - action: utter_Comic_book_fun_facts
+
+- story: tell me more about Comic_book
+  steps:
+    - intent: Comic_book_fun_facts
+    - action: utter_Comic_book_fun_facts
+    - intent: tell_me_more
+    - action: utter_Comic_book_fun_facts
+
+- story: tell me more about Comic_book
+  steps:
+    - intent: Comic_book_fun_facts
+    - action: utter_Comic_book_fun_facts
+    - intent: tell_me_more
+    - action: utter_Comic_book_fun_facts
+    - intent: tell_me_more
+    - action: utter_Comic_book_fun_facts
+
+- story: about Voting_fun_facts
+  steps:
+     - intent: Voting_fun_facts
+     - action: utter_Voting_fun_facts
+
+- story: tell me more about Voting
+  steps:
+    - intent: Voting_fun_facts
+    - action: utter_Voting_fun_facts
+    - intent: tell_me_more
+    - action: utter_Voting_fun_facts
+
+- story: tell me more about Voting
+  steps:
+    - intent: Voting_fun_facts
+    - action: utter_Voting_fun_facts
+    - intent: tell_me_more
+    - action: utter_Voting_fun_facts
+    - intent: tell_me_more
+    - action: utter_Voting_fun_facts
+
+- story: about Football_team_fun_facts
+  steps:
+     - intent: Football_team_fun_facts
+     - action: utter_Football_team_fun_facts
+
+- story: tell me more about Football_team
+  steps:
+    - intent: Football_team_fun_facts
+    - action: utter_Football_team_fun_facts
+    - intent: tell_me_more
+    - action: utter_Football_team_fun_facts
+
+- story: tell me more about Football_team
+  steps:
+    - intent: Football_team_fun_facts
+    - action: utter_Football_team_fun_facts
+    - intent: tell_me_more
+    - action: utter_Football_team_fun_facts
+    - intent: tell_me_more
+    - action: utter_Football_team_fun_facts
+
+- story: about Rotten_Tomatoes_fun_facts
+  steps:
+     - intent: Rotten_Tomatoes_fun_facts
+     - action: utter_Rotten_Tomatoes_fun_facts
+
+- story: tell me more about Rotten_Tomatoes
+  steps:
+    - intent: Rotten_Tomatoes_fun_facts
+    - action: utter_Rotten_Tomatoes_fun_facts
+    - intent: tell_me_more
+    - action: utter_Rotten_Tomatoes_fun_facts
+
+- story: tell me more about Rotten_Tomatoes
+  steps:
+    - intent: Rotten_Tomatoes_fun_facts
+    - action: utter_Rotten_Tomatoes_fun_facts
+    - intent: tell_me_more
+    - action: utter_Rotten_Tomatoes_fun_facts
+    - intent: tell_me_more
+    - action: utter_Rotten_Tomatoes_fun_facts
+
+- story: about Deadpool_2_fun_facts
+  steps:
+     - intent: Deadpool_2_fun_facts
+     - action: utter_Deadpool_2_fun_facts
+
+- story: tell me more about Deadpool_2
+  steps:
+    - intent: Deadpool_2_fun_facts
+    - action: utter_Deadpool_2_fun_facts
+    - intent: tell_me_more
+    - action: utter_Deadpool_2_fun_facts
+
+- story: tell me more about Deadpool_2
+  steps:
+    - intent: Deadpool_2_fun_facts
+    - action: utter_Deadpool_2_fun_facts
+    - intent: tell_me_more
+    - action: utter_Deadpool_2_fun_facts
+    - intent: tell_me_more
+    - action: utter_Deadpool_2_fun_facts
+
+- story: about Mark_Twain_fun_facts
+  steps:
+     - intent: Mark_Twain_fun_facts
+     - action: utter_Mark_Twain_fun_facts
+
+- story: tell me more about Mark_Twain
+  steps:
+    - intent: Mark_Twain_fun_facts
+    - action: utter_Mark_Twain_fun_facts
+    - intent: tell_me_more
+    - action: utter_Mark_Twain_fun_facts
+
+- story: tell me more about Mark_Twain
+  steps:
+    - intent: Mark_Twain_fun_facts
+    - action: utter_Mark_Twain_fun_facts
+    - intent: tell_me_more
+    - action: utter_Mark_Twain_fun_facts
+    - intent: tell_me_more
+    - action: utter_Mark_Twain_fun_facts
+
+- story: about Space_fun_facts
+  steps:
+     - intent: Space_fun_facts
+     - action: utter_Space_fun_facts
+
+- story: tell me more about Space
+  steps:
+    - intent: Space_fun_facts
+    - action: utter_Space_fun_facts
+    - intent: tell_me_more
+    - action: utter_Space_fun_facts
+
+- story: tell me more about Space
+  steps:
+    - intent: Space_fun_facts
+    - action: utter_Space_fun_facts
+    - intent: tell_me_more
+    - action: utter_Space_fun_facts
+    - intent: tell_me_more
+    - action: utter_Space_fun_facts
+
+- story: about Led_Zeppelin_fun_facts
+  steps:
+     - intent: Led_Zeppelin_fun_facts
+     - action: utter_Led_Zeppelin_fun_facts
+
+- story: tell me more about Led_Zeppelin
+  steps:
+    - intent: Led_Zeppelin_fun_facts
+    - action: utter_Led_Zeppelin_fun_facts
+    - intent: tell_me_more
+    - action: utter_Led_Zeppelin_fun_facts
+
+- story: tell me more about Led_Zeppelin
+  steps:
+    - intent: Led_Zeppelin_fun_facts
+    - action: utter_Led_Zeppelin_fun_facts
+    - intent: tell_me_more
+    - action: utter_Led_Zeppelin_fun_facts
+    - intent: tell_me_more
+    - action: utter_Led_Zeppelin_fun_facts
+
+- story: about Shark_fun_facts
+  steps:
+     - intent: Shark_fun_facts
+     - action: utter_Shark_fun_facts
+
+- story: tell me more about Shark
+  steps:
+    - intent: Shark_fun_facts
+    - action: utter_Shark_fun_facts
+    - intent: tell_me_more
+    - action: utter_Shark_fun_facts
+
+- story: tell me more about Shark
+  steps:
+    - intent: Shark_fun_facts
+    - action: utter_Shark_fun_facts
+    - intent: tell_me_more
+    - action: utter_Shark_fun_facts
+    - intent: tell_me_more
+    - action: utter_Shark_fun_facts
+
+- story: about IMDb_fun_facts
+  steps:
+     - intent: IMDb_fun_facts
+     - action: utter_IMDb_fun_facts
+
+- story: tell me more about IMDb
+  steps:
+    - intent: IMDb_fun_facts
+    - action: utter_IMDb_fun_facts
+    - intent: tell_me_more
+    - action: utter_IMDb_fun_facts
+
+- story: tell me more about IMDb
+  steps:
+    - intent: IMDb_fun_facts
+    - action: utter_IMDb_fun_facts
+    - intent: tell_me_more
+    - action: utter_IMDb_fun_facts
+    - intent: tell_me_more
+    - action: utter_IMDb_fun_facts
+
+- story: about Artificial_intelligence_fun_facts
+  steps:
+     - intent: Artificial_intelligence_fun_facts
+     - action: utter_Artificial_intelligence_fun_facts
+
+- story: tell me more about Artificial_intelligence
+  steps:
+    - intent: Artificial_intelligence_fun_facts
+    - action: utter_Artificial_intelligence_fun_facts
+    - intent: tell_me_more
+    - action: utter_Artificial_intelligence_fun_facts
+
+- story: tell me more about Artificial_intelligence
+  steps:
+    - intent: Artificial_intelligence_fun_facts
+    - action: utter_Artificial_intelligence_fun_facts
+    - intent: tell_me_more
+    - action: utter_Artificial_intelligence_fun_facts
+    - intent: tell_me_more
+    - action: utter_Artificial_intelligence_fun_facts
+
+- story: about Virtual_reality_fun_facts
+  steps:
+     - intent: Virtual_reality_fun_facts
+     - action: utter_Virtual_reality_fun_facts
+
+- story: tell me more about Virtual_reality
+  steps:
+    - intent: Virtual_reality_fun_facts
+    - action: utter_Virtual_reality_fun_facts
+    - intent: tell_me_more
+    - action: utter_Virtual_reality_fun_facts
+
+- story: tell me more about Virtual_reality
+  steps:
+    - intent: Virtual_reality_fun_facts
+    - action: utter_Virtual_reality_fun_facts
+    - intent: tell_me_more
+    - action: utter_Virtual_reality_fun_facts
+    - intent: tell_me_more
+    - action: utter_Virtual_reality_fun_facts
+
+- story: about Avengers:_Infinity_War_fun_facts
+  steps:
+     - intent: Avengers:_Infinity_War_fun_facts
+     - action: utter_Avengers:_Infinity_War_fun_facts
+
+- story: tell me more about Avengers:_Infinity_War
+  steps:
+    - intent: Avengers:_Infinity_War_fun_facts
+    - action: utter_Avengers:_Infinity_War_fun_facts
+    - intent: tell_me_more
+    - action: utter_Avengers:_Infinity_War_fun_facts
+
+- story: tell me more about Avengers:_Infinity_War
+  steps:
+    - intent: Avengers:_Infinity_War_fun_facts
+    - action: utter_Avengers:_Infinity_War_fun_facts
+    - intent: tell_me_more
+    - action: utter_Avengers:_Infinity_War_fun_facts
+    - intent: tell_me_more
+    - action: utter_Avengers:_Infinity_War_fun_facts
+
+- story: about Science_fiction_fun_facts
+  steps:
+     - intent: Science_fiction_fun_facts
+     - action: utter_Science_fiction_fun_facts
+
+- story: tell me more about Science_fiction
+  steps:
+    - intent: Science_fiction_fun_facts
+    - action: utter_Science_fiction_fun_facts
+    - intent: tell_me_more
+    - action: utter_Science_fiction_fun_facts
+
+- story: tell me more about Science_fiction
+  steps:
+    - intent: Science_fiction_fun_facts
+    - action: utter_Science_fiction_fun_facts
+    - intent: tell_me_more
+    - action: utter_Science_fiction_fun_facts
+    - intent: tell_me_more
+    - action: utter_Science_fiction_fun_facts
+
+- story: about Kanye_West_fun_facts
+  steps:
+     - intent: Kanye_West_fun_facts
+     - action: utter_Kanye_West_fun_facts
+
+- story: tell me more about Kanye_West
+  steps:
+    - intent: Kanye_West_fun_facts
+    - action: utter_Kanye_West_fun_facts
+    - intent: tell_me_more
+    - action: utter_Kanye_West_fun_facts
+
+- story: tell me more about Kanye_West
+  steps:
+    - intent: Kanye_West_fun_facts
+    - action: utter_Kanye_West_fun_facts
+    - intent: tell_me_more
+    - action: utter_Kanye_West_fun_facts
+    - intent: tell_me_more
+    - action: utter_Kanye_West_fun_facts
+
+- story: about Rock_music_fun_facts
+  steps:
+     - intent: Rock_music_fun_facts
+     - action: utter_Rock_music_fun_facts
+
+- story: tell me more about Rock_music
+  steps:
+    - intent: Rock_music_fun_facts
+    - action: utter_Rock_music_fun_facts
+    - intent: tell_me_more
+    - action: utter_Rock_music_fun_facts
+
+- story: tell me more about Rock_music
+  steps:
+    - intent: Rock_music_fun_facts
+    - action: utter_Rock_music_fun_facts
+    - intent: tell_me_more
+    - action: utter_Rock_music_fun_facts
+    - intent: tell_me_more
+    - action: utter_Rock_music_fun_facts
+
+- story: about Black_Panther_(film)_fun_facts
+  steps:
+     - intent: Black_Panther_(film)_fun_facts
+     - action: utter_Black_Panther_(film)_fun_facts
+
+- story: tell me more about Black_Panther_(film)
+  steps:
+    - intent: Black_Panther_(film)_fun_facts
+    - action: utter_Black_Panther_(film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Black_Panther_(film)_fun_facts
+
+- story: tell me more about Black_Panther_(film)
+  steps:
+    - intent: Black_Panther_(film)_fun_facts
+    - action: utter_Black_Panther_(film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Black_Panther_(film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Black_Panther_(film)_fun_facts
+
+- story: about Governor_fun_facts
+  steps:
+     - intent: Governor_fun_facts
+     - action: utter_Governor_fun_facts
+
+- story: tell me more about Governor
+  steps:
+    - intent: Governor_fun_facts
+    - action: utter_Governor_fun_facts
+    - intent: tell_me_more
+    - action: utter_Governor_fun_facts
+
+- story: tell me more about Governor
+  steps:
+    - intent: Governor_fun_facts
+    - action: utter_Governor_fun_facts
+    - intent: tell_me_more
+    - action: utter_Governor_fun_facts
+    - intent: tell_me_more
+    - action: utter_Governor_fun_facts
+
+- story: about George_Clooney_fun_facts
+  steps:
+     - intent: George_Clooney_fun_facts
+     - action: utter_George_Clooney_fun_facts
+
+- story: tell me more about George_Clooney
+  steps:
+    - intent: George_Clooney_fun_facts
+    - action: utter_George_Clooney_fun_facts
+    - intent: tell_me_more
+    - action: utter_George_Clooney_fun_facts
+
+- story: tell me more about George_Clooney
+  steps:
+    - intent: George_Clooney_fun_facts
+    - action: utter_George_Clooney_fun_facts
+    - intent: tell_me_more
+    - action: utter_George_Clooney_fun_facts
+    - intent: tell_me_more
+    - action: utter_George_Clooney_fun_facts
+
+- story: about Inception_fun_facts
+  steps:
+     - intent: Inception_fun_facts
+     - action: utter_Inception_fun_facts
+
+- story: tell me more about Inception
+  steps:
+    - intent: Inception_fun_facts
+    - action: utter_Inception_fun_facts
+    - intent: tell_me_more
+    - action: utter_Inception_fun_facts
+
+- story: tell me more about Inception
+  steps:
+    - intent: Inception_fun_facts
+    - action: utter_Inception_fun_facts
+    - intent: tell_me_more
+    - action: utter_Inception_fun_facts
+    - intent: tell_me_more
+    - action: utter_Inception_fun_facts
+
+- story: about Jay-Z_fun_facts
+  steps:
+     - intent: Jay-Z_fun_facts
+     - action: utter_Jay-Z_fun_facts
+
+- story: tell me more about Jay-Z
+  steps:
+    - intent: Jay-Z_fun_facts
+    - action: utter_Jay-Z_fun_facts
+    - intent: tell_me_more
+    - action: utter_Jay-Z_fun_facts
+
+- story: tell me more about Jay-Z
+  steps:
+    - intent: Jay-Z_fun_facts
+    - action: utter_Jay-Z_fun_facts
+    - intent: tell_me_more
+    - action: utter_Jay-Z_fun_facts
+    - intent: tell_me_more
+    - action: utter_Jay-Z_fun_facts
+
+- story: about Volleyball_fun_facts
+  steps:
+     - intent: Volleyball_fun_facts
+     - action: utter_Volleyball_fun_facts
+
+- story: tell me more about Volleyball
+  steps:
+    - intent: Volleyball_fun_facts
+    - action: utter_Volleyball_fun_facts
+    - intent: tell_me_more
+    - action: utter_Volleyball_fun_facts
+
+- story: tell me more about Volleyball
+  steps:
+    - intent: Volleyball_fun_facts
+    - action: utter_Volleyball_fun_facts
+    - intent: tell_me_more
+    - action: utter_Volleyball_fun_facts
+    - intent: tell_me_more
+    - action: utter_Volleyball_fun_facts
+
+- story: about Classical_music_fun_facts
+  steps:
+     - intent: Classical_music_fun_facts
+     - action: utter_Classical_music_fun_facts
+
+- story: tell me more about Classical_music
+  steps:
+    - intent: Classical_music_fun_facts
+    - action: utter_Classical_music_fun_facts
+    - intent: tell_me_more
+    - action: utter_Classical_music_fun_facts
+
+- story: tell me more about Classical_music
+  steps:
+    - intent: Classical_music_fun_facts
+    - action: utter_Classical_music_fun_facts
+    - intent: tell_me_more
+    - action: utter_Classical_music_fun_facts
+    - intent: tell_me_more
+    - action: utter_Classical_music_fun_facts
+
+- story: about Morgan_Freeman_fun_facts
+  steps:
+     - intent: Morgan_Freeman_fun_facts
+     - action: utter_Morgan_Freeman_fun_facts
+
+- story: tell me more about Morgan_Freeman
+  steps:
+    - intent: Morgan_Freeman_fun_facts
+    - action: utter_Morgan_Freeman_fun_facts
+    - intent: tell_me_more
+    - action: utter_Morgan_Freeman_fun_facts
+
+- story: tell me more about Morgan_Freeman
+  steps:
+    - intent: Morgan_Freeman_fun_facts
+    - action: utter_Morgan_Freeman_fun_facts
+    - intent: tell_me_more
+    - action: utter_Morgan_Freeman_fun_facts
+    - intent: tell_me_more
+    - action: utter_Morgan_Freeman_fun_facts
+
+- story: about Astronomy_fun_facts
+  steps:
+     - intent: Astronomy_fun_facts
+     - action: utter_Astronomy_fun_facts
+
+- story: tell me more about Astronomy
+  steps:
+    - intent: Astronomy_fun_facts
+    - action: utter_Astronomy_fun_facts
+    - intent: tell_me_more
+    - action: utter_Astronomy_fun_facts
+
+- story: tell me more about Astronomy
+  steps:
+    - intent: Astronomy_fun_facts
+    - action: utter_Astronomy_fun_facts
+    - intent: tell_me_more
+    - action: utter_Astronomy_fun_facts
+    - intent: tell_me_more
+    - action: utter_Astronomy_fun_facts
+
+- story: about Elton_John_fun_facts
+  steps:
+     - intent: Elton_John_fun_facts
+     - action: utter_Elton_John_fun_facts
+
+- story: tell me more about Elton_John
+  steps:
+    - intent: Elton_John_fun_facts
+    - action: utter_Elton_John_fun_facts
+    - intent: tell_me_more
+    - action: utter_Elton_John_fun_facts
+
+- story: tell me more about Elton_John
+  steps:
+    - intent: Elton_John_fun_facts
+    - action: utter_Elton_John_fun_facts
+    - intent: tell_me_more
+    - action: utter_Elton_John_fun_facts
+    - intent: tell_me_more
+    - action: utter_Elton_John_fun_facts
+
+- story: about Justin_Bieber_fun_facts
+  steps:
+     - intent: Justin_Bieber_fun_facts
+     - action: utter_Justin_Bieber_fun_facts
+
+- story: tell me more about Justin_Bieber
+  steps:
+    - intent: Justin_Bieber_fun_facts
+    - action: utter_Justin_Bieber_fun_facts
+    - intent: tell_me_more
+    - action: utter_Justin_Bieber_fun_facts
+
+- story: tell me more about Justin_Bieber
+  steps:
+    - intent: Justin_Bieber_fun_facts
+    - action: utter_Justin_Bieber_fun_facts
+    - intent: tell_me_more
+    - action: utter_Justin_Bieber_fun_facts
+    - intent: tell_me_more
+    - action: utter_Justin_Bieber_fun_facts
+
+- story: about Air_Jordan_fun_facts
+  steps:
+     - intent: Air_Jordan_fun_facts
+     - action: utter_Air_Jordan_fun_facts
+
+- story: tell me more about Air_Jordan
+  steps:
+    - intent: Air_Jordan_fun_facts
+    - action: utter_Air_Jordan_fun_facts
+    - intent: tell_me_more
+    - action: utter_Air_Jordan_fun_facts
+
+- story: tell me more about Air_Jordan
+  steps:
+    - intent: Air_Jordan_fun_facts
+    - action: utter_Air_Jordan_fun_facts
+    - intent: tell_me_more
+    - action: utter_Air_Jordan_fun_facts
+    - intent: tell_me_more
+    - action: utter_Air_Jordan_fun_facts
+
+- story: about Board_game_fun_facts
+  steps:
+     - intent: Board_game_fun_facts
+     - action: utter_Board_game_fun_facts
+
+- story: tell me more about Board_game
+  steps:
+    - intent: Board_game_fun_facts
+    - action: utter_Board_game_fun_facts
+    - intent: tell_me_more
+    - action: utter_Board_game_fun_facts
+
+- story: tell me more about Board_game
+  steps:
+    - intent: Board_game_fun_facts
+    - action: utter_Board_game_fun_facts
+    - intent: tell_me_more
+    - action: utter_Board_game_fun_facts
+    - intent: tell_me_more
+    - action: utter_Board_game_fun_facts
+
+- story: about Harry_Potter_(film_series)_fun_facts
+  steps:
+     - intent: Harry_Potter_(film_series)_fun_facts
+     - action: utter_Harry_Potter_(film_series)_fun_facts
+
+- story: tell me more about Harry_Potter_(film_series)
+  steps:
+    - intent: Harry_Potter_(film_series)_fun_facts
+    - action: utter_Harry_Potter_(film_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Harry_Potter_(film_series)_fun_facts
+
+- story: tell me more about Harry_Potter_(film_series)
+  steps:
+    - intent: Harry_Potter_(film_series)_fun_facts
+    - action: utter_Harry_Potter_(film_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Harry_Potter_(film_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Harry_Potter_(film_series)_fun_facts
+
+- story: about Elvis_Presley_fun_facts
+  steps:
+     - intent: Elvis_Presley_fun_facts
+     - action: utter_Elvis_Presley_fun_facts
+
+- story: tell me more about Elvis_Presley
+  steps:
+    - intent: Elvis_Presley_fun_facts
+    - action: utter_Elvis_Presley_fun_facts
+    - intent: tell_me_more
+    - action: utter_Elvis_Presley_fun_facts
+
+- story: tell me more about Elvis_Presley
+  steps:
+    - intent: Elvis_Presley_fun_facts
+    - action: utter_Elvis_Presley_fun_facts
+    - intent: tell_me_more
+    - action: utter_Elvis_Presley_fun_facts
+    - intent: tell_me_more
+    - action: utter_Elvis_Presley_fun_facts
+
+- story: about Batman_fun_facts
+  steps:
+     - intent: Batman_fun_facts
+     - action: utter_Batman_fun_facts
+
+- story: tell me more about Batman
+  steps:
+    - intent: Batman_fun_facts
+    - action: utter_Batman_fun_facts
+    - intent: tell_me_more
+    - action: utter_Batman_fun_facts
+
+- story: tell me more about Batman
+  steps:
+    - intent: Batman_fun_facts
+    - action: utter_Batman_fun_facts
+    - intent: tell_me_more
+    - action: utter_Batman_fun_facts
+    - intent: tell_me_more
+    - action: utter_Batman_fun_facts
+
+- story: about Wrestling_fun_facts
+  steps:
+     - intent: Wrestling_fun_facts
+     - action: utter_Wrestling_fun_facts
+
+- story: tell me more about Wrestling
+  steps:
+    - intent: Wrestling_fun_facts
+    - action: utter_Wrestling_fun_facts
+    - intent: tell_me_more
+    - action: utter_Wrestling_fun_facts
+
+- story: tell me more about Wrestling
+  steps:
+    - intent: Wrestling_fun_facts
+    - action: utter_Wrestling_fun_facts
+    - intent: tell_me_more
+    - action: utter_Wrestling_fun_facts
+    - intent: tell_me_more
+    - action: utter_Wrestling_fun_facts
+
+- story: about Stephen_King_fun_facts
+  steps:
+     - intent: Stephen_King_fun_facts
+     - action: utter_Stephen_King_fun_facts
+
+- story: tell me more about Stephen_King
+  steps:
+    - intent: Stephen_King_fun_facts
+    - action: utter_Stephen_King_fun_facts
+    - intent: tell_me_more
+    - action: utter_Stephen_King_fun_facts
+
+- story: tell me more about Stephen_King
+  steps:
+    - intent: Stephen_King_fun_facts
+    - action: utter_Stephen_King_fun_facts
+    - intent: tell_me_more
+    - action: utter_Stephen_King_fun_facts
+    - intent: tell_me_more
+    - action: utter_Stephen_King_fun_facts
+
+- story: about The_Beatles_fun_facts
+  steps:
+     - intent: The_Beatles_fun_facts
+     - action: utter_The_Beatles_fun_facts
+
+- story: tell me more about The_Beatles
+  steps:
+    - intent: The_Beatles_fun_facts
+    - action: utter_The_Beatles_fun_facts
+    - intent: tell_me_more
+    - action: utter_The_Beatles_fun_facts
+
+- story: tell me more about The_Beatles
+  steps:
+    - intent: The_Beatles_fun_facts
+    - action: utter_The_Beatles_fun_facts
+    - intent: tell_me_more
+    - action: utter_The_Beatles_fun_facts
+    - intent: tell_me_more
+    - action: utter_The_Beatles_fun_facts
+
+- story: about Elon_Musk_fun_facts
+  steps:
+     - intent: Elon_Musk_fun_facts
+     - action: utter_Elon_Musk_fun_facts
+
+- story: tell me more about Elon_Musk
+  steps:
+    - intent: Elon_Musk_fun_facts
+    - action: utter_Elon_Musk_fun_facts
+    - intent: tell_me_more
+    - action: utter_Elon_Musk_fun_facts
+
+- story: tell me more about Elon_Musk
+  steps:
+    - intent: Elon_Musk_fun_facts
+    - action: utter_Elon_Musk_fun_facts
+    - intent: tell_me_more
+    - action: utter_Elon_Musk_fun_facts
+    - intent: tell_me_more
+    - action: utter_Elon_Musk_fun_facts
+
+- story: about Titanic_(1997_film)_fun_facts
+  steps:
+     - intent: Titanic_(1997_film)_fun_facts
+     - action: utter_Titanic_(1997_film)_fun_facts
+
+- story: tell me more about Titanic_(1997_film)
+  steps:
+    - intent: Titanic_(1997_film)_fun_facts
+    - action: utter_Titanic_(1997_film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Titanic_(1997_film)_fun_facts
+
+- story: tell me more about Titanic_(1997_film)
+  steps:
+    - intent: Titanic_(1997_film)_fun_facts
+    - action: utter_Titanic_(1997_film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Titanic_(1997_film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Titanic_(1997_film)_fun_facts
+
+- story: about Ariana_Grande_fun_facts
+  steps:
+     - intent: Ariana_Grande_fun_facts
+     - action: utter_Ariana_Grande_fun_facts
+
+- story: tell me more about Ariana_Grande
+  steps:
+    - intent: Ariana_Grande_fun_facts
+    - action: utter_Ariana_Grande_fun_facts
+    - intent: tell_me_more
+    - action: utter_Ariana_Grande_fun_facts
+
+- story: tell me more about Ariana_Grande
+  steps:
+    - intent: Ariana_Grande_fun_facts
+    - action: utter_Ariana_Grande_fun_facts
+    - intent: tell_me_more
+    - action: utter_Ariana_Grande_fun_facts
+    - intent: tell_me_more
+    - action: utter_Ariana_Grande_fun_facts
+
+- story: about Siri_fun_facts
+  steps:
+     - intent: Siri_fun_facts
+     - action: utter_Siri_fun_facts
+
+- story: tell me more about Siri
+  steps:
+    - intent: Siri_fun_facts
+    - action: utter_Siri_fun_facts
+    - intent: tell_me_more
+    - action: utter_Siri_fun_facts
+
+- story: tell me more about Siri
+  steps:
+    - intent: Siri_fun_facts
+    - action: utter_Siri_fun_facts
+    - intent: tell_me_more
+    - action: utter_Siri_fun_facts
+    - intent: tell_me_more
+    - action: utter_Siri_fun_facts
+
+- story: about Oscar_Wilde_fun_facts
+  steps:
+     - intent: Oscar_Wilde_fun_facts
+     - action: utter_Oscar_Wilde_fun_facts
+
+- story: tell me more about Oscar_Wilde
+  steps:
+    - intent: Oscar_Wilde_fun_facts
+    - action: utter_Oscar_Wilde_fun_facts
+    - intent: tell_me_more
+    - action: utter_Oscar_Wilde_fun_facts
+
+- story: tell me more about Oscar_Wilde
+  steps:
+    - intent: Oscar_Wilde_fun_facts
+    - action: utter_Oscar_Wilde_fun_facts
+    - intent: tell_me_more
+    - action: utter_Oscar_Wilde_fun_facts
+    - intent: tell_me_more
+    - action: utter_Oscar_Wilde_fun_facts
+
+- story: about Transformers_(film_series)_fun_facts
+  steps:
+     - intent: Transformers_(film_series)_fun_facts
+     - action: utter_Transformers_(film_series)_fun_facts
+
+- story: tell me more about Transformers_(film_series)
+  steps:
+    - intent: Transformers_(film_series)_fun_facts
+    - action: utter_Transformers_(film_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Transformers_(film_series)_fun_facts
+
+- story: tell me more about Transformers_(film_series)
+  steps:
+    - intent: Transformers_(film_series)_fun_facts
+    - action: utter_Transformers_(film_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Transformers_(film_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Transformers_(film_series)_fun_facts
+
+- story: about Nintendo_fun_facts
+  steps:
+     - intent: Nintendo_fun_facts
+     - action: utter_Nintendo_fun_facts
+
+- story: tell me more about Nintendo
+  steps:
+    - intent: Nintendo_fun_facts
+    - action: utter_Nintendo_fun_facts
+    - intent: tell_me_more
+    - action: utter_Nintendo_fun_facts
+
+- story: tell me more about Nintendo
+  steps:
+    - intent: Nintendo_fun_facts
+    - action: utter_Nintendo_fun_facts
+    - intent: tell_me_more
+    - action: utter_Nintendo_fun_facts
+    - intent: tell_me_more
+    - action: utter_Nintendo_fun_facts
+
+- story: about Monopoly_(game)_fun_facts
+  steps:
+     - intent: Monopoly_(game)_fun_facts
+     - action: utter_Monopoly_(game)_fun_facts
+
+- story: tell me more about Monopoly_(game)
+  steps:
+    - intent: Monopoly_(game)_fun_facts
+    - action: utter_Monopoly_(game)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Monopoly_(game)_fun_facts
+
+- story: tell me more about Monopoly_(game)
+  steps:
+    - intent: Monopoly_(game)_fun_facts
+    - action: utter_Monopoly_(game)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Monopoly_(game)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Monopoly_(game)_fun_facts
+
+- story: about Stranger_Things_fun_facts
+  steps:
+     - intent: Stranger_Things_fun_facts
+     - action: utter_Stranger_Things_fun_facts
+
+- story: tell me more about Stranger_Things
+  steps:
+    - intent: Stranger_Things_fun_facts
+    - action: utter_Stranger_Things_fun_facts
+    - intent: tell_me_more
+    - action: utter_Stranger_Things_fun_facts
+
+- story: tell me more about Stranger_Things
+  steps:
+    - intent: Stranger_Things_fun_facts
+    - action: utter_Stranger_Things_fun_facts
+    - intent: tell_me_more
+    - action: utter_Stranger_Things_fun_facts
+    - intent: tell_me_more
+    - action: utter_Stranger_Things_fun_facts
+
+- story: about Luke_Skywalker_fun_facts
+  steps:
+     - intent: Luke_Skywalker_fun_facts
+     - action: utter_Luke_Skywalker_fun_facts
+
+- story: tell me more about Luke_Skywalker
+  steps:
+    - intent: Luke_Skywalker_fun_facts
+    - action: utter_Luke_Skywalker_fun_facts
+    - intent: tell_me_more
+    - action: utter_Luke_Skywalker_fun_facts
+
+- story: tell me more about Luke_Skywalker
+  steps:
+    - intent: Luke_Skywalker_fun_facts
+    - action: utter_Luke_Skywalker_fun_facts
+    - intent: tell_me_more
+    - action: utter_Luke_Skywalker_fun_facts
+    - intent: tell_me_more
+    - action: utter_Luke_Skywalker_fun_facts
+
+- story: about Katy_Perry_fun_facts
+  steps:
+     - intent: Katy_Perry_fun_facts
+     - action: utter_Katy_Perry_fun_facts
+
+- story: tell me more about Katy_Perry
+  steps:
+    - intent: Katy_Perry_fun_facts
+    - action: utter_Katy_Perry_fun_facts
+    - intent: tell_me_more
+    - action: utter_Katy_Perry_fun_facts
+
+- story: tell me more about Katy_Perry
+  steps:
+    - intent: Katy_Perry_fun_facts
+    - action: utter_Katy_Perry_fun_facts
+    - intent: tell_me_more
+    - action: utter_Katy_Perry_fun_facts
+    - intent: tell_me_more
+    - action: utter_Katy_Perry_fun_facts
+
+- story: about Gucci_fun_facts
+  steps:
+     - intent: Gucci_fun_facts
+     - action: utter_Gucci_fun_facts
+
+- story: tell me more about Gucci
+  steps:
+    - intent: Gucci_fun_facts
+    - action: utter_Gucci_fun_facts
+    - intent: tell_me_more
+    - action: utter_Gucci_fun_facts
+
+- story: tell me more about Gucci
+  steps:
+    - intent: Gucci_fun_facts
+    - action: utter_Gucci_fun_facts
+    - intent: tell_me_more
+    - action: utter_Gucci_fun_facts
+    - intent: tell_me_more
+    - action: utter_Gucci_fun_facts
+
+- story: about Machine_learning_fun_facts
+  steps:
+     - intent: Machine_learning_fun_facts
+     - action: utter_Machine_learning_fun_facts
+
+- story: tell me more about Machine_learning
+  steps:
+    - intent: Machine_learning_fun_facts
+    - action: utter_Machine_learning_fun_facts
+    - intent: tell_me_more
+    - action: utter_Machine_learning_fun_facts
+
+- story: tell me more about Machine_learning
+  steps:
+    - intent: Machine_learning_fun_facts
+    - action: utter_Machine_learning_fun_facts
+    - intent: tell_me_more
+    - action: utter_Machine_learning_fun_facts
+    - intent: tell_me_more
+    - action: utter_Machine_learning_fun_facts
+
+- story: about Spider-Man_fun_facts
+  steps:
+     - intent: Spider-Man_fun_facts
+     - action: utter_Spider-Man_fun_facts
+
+- story: tell me more about Spider-Man
+  steps:
+    - intent: Spider-Man_fun_facts
+    - action: utter_Spider-Man_fun_facts
+    - intent: tell_me_more
+    - action: utter_Spider-Man_fun_facts
+
+- story: tell me more about Spider-Man
+  steps:
+    - intent: Spider-Man_fun_facts
+    - action: utter_Spider-Man_fun_facts
+    - intent: tell_me_more
+    - action: utter_Spider-Man_fun_facts
+    - intent: tell_me_more
+    - action: utter_Spider-Man_fun_facts
+
+- story: about Batman_in_film_fun_facts
+  steps:
+     - intent: Batman_in_film_fun_facts
+     - action: utter_Batman_in_film_fun_facts
+
+- story: tell me more about Batman_in_film
+  steps:
+    - intent: Batman_in_film_fun_facts
+    - action: utter_Batman_in_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Batman_in_film_fun_facts
+
+- story: tell me more about Batman_in_film
+  steps:
+    - intent: Batman_in_film_fun_facts
+    - action: utter_Batman_in_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Batman_in_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Batman_in_film_fun_facts
+
+- story: about Cristiano_Ronaldo_fun_facts
+  steps:
+     - intent: Cristiano_Ronaldo_fun_facts
+     - action: utter_Cristiano_Ronaldo_fun_facts
+
+- story: tell me more about Cristiano_Ronaldo
+  steps:
+    - intent: Cristiano_Ronaldo_fun_facts
+    - action: utter_Cristiano_Ronaldo_fun_facts
+    - intent: tell_me_more
+    - action: utter_Cristiano_Ronaldo_fun_facts
+
+- story: tell me more about Cristiano_Ronaldo
+  steps:
+    - intent: Cristiano_Ronaldo_fun_facts
+    - action: utter_Cristiano_Ronaldo_fun_facts
+    - intent: tell_me_more
+    - action: utter_Cristiano_Ronaldo_fun_facts
+    - intent: tell_me_more
+    - action: utter_Cristiano_Ronaldo_fun_facts
+
+- story: about Model_(person)_fun_facts
+  steps:
+     - intent: Model_(person)_fun_facts
+     - action: utter_Model_(person)_fun_facts
+
+- story: tell me more about Model_(person)
+  steps:
+    - intent: Model_(person)_fun_facts
+    - action: utter_Model_(person)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Model_(person)_fun_facts
+
+- story: tell me more about Model_(person)
+  steps:
+    - intent: Model_(person)_fun_facts
+    - action: utter_Model_(person)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Model_(person)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Model_(person)_fun_facts
+
+- story: about Pandora_Radio_fun_facts
+  steps:
+     - intent: Pandora_Radio_fun_facts
+     - action: utter_Pandora_Radio_fun_facts
+
+- story: tell me more about Pandora_Radio
+  steps:
+    - intent: Pandora_Radio_fun_facts
+    - action: utter_Pandora_Radio_fun_facts
+    - intent: tell_me_more
+    - action: utter_Pandora_Radio_fun_facts
+
+- story: tell me more about Pandora_Radio
+  steps:
+    - intent: Pandora_Radio_fun_facts
+    - action: utter_Pandora_Radio_fun_facts
+    - intent: tell_me_more
+    - action: utter_Pandora_Radio_fun_facts
+    - intent: tell_me_more
+    - action: utter_Pandora_Radio_fun_facts
+
+- story: about Jeans_fun_facts
+  steps:
+     - intent: Jeans_fun_facts
+     - action: utter_Jeans_fun_facts
+
+- story: tell me more about Jeans
+  steps:
+    - intent: Jeans_fun_facts
+    - action: utter_Jeans_fun_facts
+    - intent: tell_me_more
+    - action: utter_Jeans_fun_facts
+
+- story: tell me more about Jeans
+  steps:
+    - intent: Jeans_fun_facts
+    - action: utter_Jeans_fun_facts
+    - intent: tell_me_more
+    - action: utter_Jeans_fun_facts
+    - intent: tell_me_more
+    - action: utter_Jeans_fun_facts
+
+- story: about Hip_hop_fun_facts
+  steps:
+     - intent: Hip_hop_fun_facts
+     - action: utter_Hip_hop_fun_facts
+
+- story: tell me more about Hip_hop
+  steps:
+    - intent: Hip_hop_fun_facts
+    - action: utter_Hip_hop_fun_facts
+    - intent: tell_me_more
+    - action: utter_Hip_hop_fun_facts
+
+- story: tell me more about Hip_hop
+  steps:
+    - intent: Hip_hop_fun_facts
+    - action: utter_Hip_hop_fun_facts
+    - intent: tell_me_more
+    - action: utter_Hip_hop_fun_facts
+    - intent: tell_me_more
+    - action: utter_Hip_hop_fun_facts
+
+- story: about Harry_Potter_(character)_fun_facts
+  steps:
+     - intent: Harry_Potter_(character)_fun_facts
+     - action: utter_Harry_Potter_(character)_fun_facts
+
+- story: tell me more about Harry_Potter_(character)
+  steps:
+    - intent: Harry_Potter_(character)_fun_facts
+    - action: utter_Harry_Potter_(character)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Harry_Potter_(character)_fun_facts
+
+- story: tell me more about Harry_Potter_(character)
+  steps:
+    - intent: Harry_Potter_(character)_fun_facts
+    - action: utter_Harry_Potter_(character)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Harry_Potter_(character)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Harry_Potter_(character)_fun_facts
+
+- story: about Serena_Williams_fun_facts
+  steps:
+     - intent: Serena_Williams_fun_facts
+     - action: utter_Serena_Williams_fun_facts
+
+- story: tell me more about Serena_Williams
+  steps:
+    - intent: Serena_Williams_fun_facts
+    - action: utter_Serena_Williams_fun_facts
+    - intent: tell_me_more
+    - action: utter_Serena_Williams_fun_facts
+
+- story: tell me more about Serena_Williams
+  steps:
+    - intent: Serena_Williams_fun_facts
+    - action: utter_Serena_Williams_fun_facts
+    - intent: tell_me_more
+    - action: utter_Serena_Williams_fun_facts
+    - intent: tell_me_more
+    - action: utter_Serena_Williams_fun_facts
+
+- story: about K-pop_fun_facts
+  steps:
+     - intent: K-pop_fun_facts
+     - action: utter_K-pop_fun_facts
+
+- story: tell me more about K-pop
+  steps:
+    - intent: K-pop_fun_facts
+    - action: utter_K-pop_fun_facts
+    - intent: tell_me_more
+    - action: utter_K-pop_fun_facts
+
+- story: tell me more about K-pop
+  steps:
+    - intent: K-pop_fun_facts
+    - action: utter_K-pop_fun_facts
+    - intent: tell_me_more
+    - action: utter_K-pop_fun_facts
+    - intent: tell_me_more
+    - action: utter_K-pop_fun_facts
+
+- story: about Boston_Red_Sox_fun_facts
+  steps:
+     - intent: Boston_Red_Sox_fun_facts
+     - action: utter_Boston_Red_Sox_fun_facts
+
+- story: tell me more about Boston_Red_Sox
+  steps:
+    - intent: Boston_Red_Sox_fun_facts
+    - action: utter_Boston_Red_Sox_fun_facts
+    - intent: tell_me_more
+    - action: utter_Boston_Red_Sox_fun_facts
+
+- story: tell me more about Boston_Red_Sox
+  steps:
+    - intent: Boston_Red_Sox_fun_facts
+    - action: utter_Boston_Red_Sox_fun_facts
+    - intent: tell_me_more
+    - action: utter_Boston_Red_Sox_fun_facts
+    - intent: tell_me_more
+    - action: utter_Boston_Red_Sox_fun_facts
+
+- story: about Insect_fun_facts
+  steps:
+     - intent: Insect_fun_facts
+     - action: utter_Insect_fun_facts
+
+- story: tell me more about Insect
+  steps:
+    - intent: Insect_fun_facts
+    - action: utter_Insect_fun_facts
+    - intent: tell_me_more
+    - action: utter_Insect_fun_facts
+
+- story: tell me more about Insect
+  steps:
+    - intent: Insect_fun_facts
+    - action: utter_Insect_fun_facts
+    - intent: tell_me_more
+    - action: utter_Insect_fun_facts
+    - intent: tell_me_more
+    - action: utter_Insect_fun_facts
+
+- story: about Ed_Sheeran_fun_facts
+  steps:
+     - intent: Ed_Sheeran_fun_facts
+     - action: utter_Ed_Sheeran_fun_facts
+
+- story: tell me more about Ed_Sheeran
+  steps:
+    - intent: Ed_Sheeran_fun_facts
+    - action: utter_Ed_Sheeran_fun_facts
+    - intent: tell_me_more
+    - action: utter_Ed_Sheeran_fun_facts
+
+- story: tell me more about Ed_Sheeran
+  steps:
+    - intent: Ed_Sheeran_fun_facts
+    - action: utter_Ed_Sheeran_fun_facts
+    - intent: tell_me_more
+    - action: utter_Ed_Sheeran_fun_facts
+    - intent: tell_me_more
+    - action: utter_Ed_Sheeran_fun_facts
+
+- story: about Albert_Einstein_fun_facts
+  steps:
+     - intent: Albert_Einstein_fun_facts
+     - action: utter_Albert_Einstein_fun_facts
+
+- story: tell me more about Albert_Einstein
+  steps:
+    - intent: Albert_Einstein_fun_facts
+    - action: utter_Albert_Einstein_fun_facts
+    - intent: tell_me_more
+    - action: utter_Albert_Einstein_fun_facts
+
+- story: tell me more about Albert_Einstein
+  steps:
+    - intent: Albert_Einstein_fun_facts
+    - action: utter_Albert_Einstein_fun_facts
+    - intent: tell_me_more
+    - action: utter_Albert_Einstein_fun_facts
+    - intent: tell_me_more
+    - action: utter_Albert_Einstein_fun_facts
+
+- story: about Extraterrestrial_life_fun_facts
+  steps:
+     - intent: Extraterrestrial_life_fun_facts
+     - action: utter_Extraterrestrial_life_fun_facts
+
+- story: tell me more about Extraterrestrial_life
+  steps:
+    - intent: Extraterrestrial_life_fun_facts
+    - action: utter_Extraterrestrial_life_fun_facts
+    - intent: tell_me_more
+    - action: utter_Extraterrestrial_life_fun_facts
+
+- story: tell me more about Extraterrestrial_life
+  steps:
+    - intent: Extraterrestrial_life_fun_facts
+    - action: utter_Extraterrestrial_life_fun_facts
+    - intent: tell_me_more
+    - action: utter_Extraterrestrial_life_fun_facts
+    - intent: tell_me_more
+    - action: utter_Extraterrestrial_life_fun_facts
+
+- story: about Bill_Clinton_fun_facts
+  steps:
+     - intent: Bill_Clinton_fun_facts
+     - action: utter_Bill_Clinton_fun_facts
+
+- story: tell me more about Bill_Clinton
+  steps:
+    - intent: Bill_Clinton_fun_facts
+    - action: utter_Bill_Clinton_fun_facts
+    - intent: tell_me_more
+    - action: utter_Bill_Clinton_fun_facts
+
+- story: tell me more about Bill_Clinton
+  steps:
+    - intent: Bill_Clinton_fun_facts
+    - action: utter_Bill_Clinton_fun_facts
+    - intent: tell_me_more
+    - action: utter_Bill_Clinton_fun_facts
+    - intent: tell_me_more
+    - action: utter_Bill_Clinton_fun_facts
+
+- story: about Audiobook_fun_facts
+  steps:
+     - intent: Audiobook_fun_facts
+     - action: utter_Audiobook_fun_facts
+
+- story: tell me more about Audiobook
+  steps:
+    - intent: Audiobook_fun_facts
+    - action: utter_Audiobook_fun_facts
+    - intent: tell_me_more
+    - action: utter_Audiobook_fun_facts
+
+- story: tell me more about Audiobook
+  steps:
+    - intent: Audiobook_fun_facts
+    - action: utter_Audiobook_fun_facts
+    - intent: tell_me_more
+    - action: utter_Audiobook_fun_facts
+    - intent: tell_me_more
+    - action: utter_Audiobook_fun_facts
+
+- story: about George_Washington_fun_facts
+  steps:
+     - intent: George_Washington_fun_facts
+     - action: utter_George_Washington_fun_facts
+
+- story: tell me more about George_Washington
+  steps:
+    - intent: George_Washington_fun_facts
+    - action: utter_George_Washington_fun_facts
+    - intent: tell_me_more
+    - action: utter_George_Washington_fun_facts
+
+- story: tell me more about George_Washington
+  steps:
+    - intent: George_Washington_fun_facts
+    - action: utter_George_Washington_fun_facts
+    - intent: tell_me_more
+    - action: utter_George_Washington_fun_facts
+    - intent: tell_me_more
+    - action: utter_George_Washington_fun_facts
+
+- story: about Superman_in_film_fun_facts
+  steps:
+     - intent: Superman_in_film_fun_facts
+     - action: utter_Superman_in_film_fun_facts
+
+- story: tell me more about Superman_in_film
+  steps:
+    - intent: Superman_in_film_fun_facts
+    - action: utter_Superman_in_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Superman_in_film_fun_facts
+
+- story: tell me more about Superman_in_film
+  steps:
+    - intent: Superman_in_film_fun_facts
+    - action: utter_Superman_in_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Superman_in_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Superman_in_film_fun_facts
+
+- story: about Denzel_Washington_fun_facts
+  steps:
+     - intent: Denzel_Washington_fun_facts
+     - action: utter_Denzel_Washington_fun_facts
+
+- story: tell me more about Denzel_Washington
+  steps:
+    - intent: Denzel_Washington_fun_facts
+    - action: utter_Denzel_Washington_fun_facts
+    - intent: tell_me_more
+    - action: utter_Denzel_Washington_fun_facts
+
+- story: tell me more about Denzel_Washington
+  steps:
+    - intent: Denzel_Washington_fun_facts
+    - action: utter_Denzel_Washington_fun_facts
+    - intent: tell_me_more
+    - action: utter_Denzel_Washington_fun_facts
+    - intent: tell_me_more
+    - action: utter_Denzel_Washington_fun_facts
+
+- story: about Superman_fun_facts
+  steps:
+     - intent: Superman_fun_facts
+     - action: utter_Superman_fun_facts
+
+- story: tell me more about Superman
+  steps:
+    - intent: Superman_fun_facts
+    - action: utter_Superman_fun_facts
+    - intent: tell_me_more
+    - action: utter_Superman_fun_facts
+
+- story: tell me more about Superman
+  steps:
+    - intent: Superman_fun_facts
+    - action: utter_Superman_fun_facts
+    - intent: tell_me_more
+    - action: utter_Superman_fun_facts
+    - intent: tell_me_more
+    - action: utter_Superman_fun_facts
+
+- story: about The_Hunger_Games_fun_facts
+  steps:
+     - intent: The_Hunger_Games_fun_facts
+     - action: utter_The_Hunger_Games_fun_facts
+
+- story: tell me more about The_Hunger_Games
+  steps:
+    - intent: The_Hunger_Games_fun_facts
+    - action: utter_The_Hunger_Games_fun_facts
+    - intent: tell_me_more
+    - action: utter_The_Hunger_Games_fun_facts
+
+- story: tell me more about The_Hunger_Games
+  steps:
+    - intent: The_Hunger_Games_fun_facts
+    - action: utter_The_Hunger_Games_fun_facts
+    - intent: tell_me_more
+    - action: utter_The_Hunger_Games_fun_facts
+    - intent: tell_me_more
+    - action: utter_The_Hunger_Games_fun_facts
+
+- story: about Abraham_Lincoln_fun_facts
+  steps:
+     - intent: Abraham_Lincoln_fun_facts
+     - action: utter_Abraham_Lincoln_fun_facts
+
+- story: tell me more about Abraham_Lincoln
+  steps:
+    - intent: Abraham_Lincoln_fun_facts
+    - action: utter_Abraham_Lincoln_fun_facts
+    - intent: tell_me_more
+    - action: utter_Abraham_Lincoln_fun_facts
+
+- story: tell me more about Abraham_Lincoln
+  steps:
+    - intent: Abraham_Lincoln_fun_facts
+    - action: utter_Abraham_Lincoln_fun_facts
+    - intent: tell_me_more
+    - action: utter_Abraham_Lincoln_fun_facts
+    - intent: tell_me_more
+    - action: utter_Abraham_Lincoln_fun_facts
+
+- story: about Tom_Hanks_fun_facts
+  steps:
+     - intent: Tom_Hanks_fun_facts
+     - action: utter_Tom_Hanks_fun_facts
+
+- story: tell me more about Tom_Hanks
+  steps:
+    - intent: Tom_Hanks_fun_facts
+    - action: utter_Tom_Hanks_fun_facts
+    - intent: tell_me_more
+    - action: utter_Tom_Hanks_fun_facts
+
+- story: tell me more about Tom_Hanks
+  steps:
+    - intent: Tom_Hanks_fun_facts
+    - action: utter_Tom_Hanks_fun_facts
+    - intent: tell_me_more
+    - action: utter_Tom_Hanks_fun_facts
+    - intent: tell_me_more
+    - action: utter_Tom_Hanks_fun_facts
+
+- story: about Pac-Man_fun_facts
+  steps:
+     - intent: Pac-Man_fun_facts
+     - action: utter_Pac-Man_fun_facts
+
+- story: tell me more about Pac-Man
+  steps:
+    - intent: Pac-Man_fun_facts
+    - action: utter_Pac-Man_fun_facts
+    - intent: tell_me_more
+    - action: utter_Pac-Man_fun_facts
+
+- story: tell me more about Pac-Man
+  steps:
+    - intent: Pac-Man_fun_facts
+    - action: utter_Pac-Man_fun_facts
+    - intent: tell_me_more
+    - action: utter_Pac-Man_fun_facts
+    - intent: tell_me_more
+    - action: utter_Pac-Man_fun_facts
+
+- story: about Blade_Runner_fun_facts
+  steps:
+     - intent: Blade_Runner_fun_facts
+     - action: utter_Blade_Runner_fun_facts
+
+- story: tell me more about Blade_Runner
+  steps:
+    - intent: Blade_Runner_fun_facts
+    - action: utter_Blade_Runner_fun_facts
+    - intent: tell_me_more
+    - action: utter_Blade_Runner_fun_facts
+
+- story: tell me more about Blade_Runner
+  steps:
+    - intent: Blade_Runner_fun_facts
+    - action: utter_Blade_Runner_fun_facts
+    - intent: tell_me_more
+    - action: utter_Blade_Runner_fun_facts
+    - intent: tell_me_more
+    - action: utter_Blade_Runner_fun_facts
+
+- story: about Dinosaur_fun_facts
+  steps:
+     - intent: Dinosaur_fun_facts
+     - action: utter_Dinosaur_fun_facts
+
+- story: tell me more about Dinosaur
+  steps:
+    - intent: Dinosaur_fun_facts
+    - action: utter_Dinosaur_fun_facts
+    - intent: tell_me_more
+    - action: utter_Dinosaur_fun_facts
+
+- story: tell me more about Dinosaur
+  steps:
+    - intent: Dinosaur_fun_facts
+    - action: utter_Dinosaur_fun_facts
+    - intent: tell_me_more
+    - action: utter_Dinosaur_fun_facts
+    - intent: tell_me_more
+    - action: utter_Dinosaur_fun_facts
+
+- story: about Star_Trek_(film_series)_fun_facts
+  steps:
+     - intent: Star_Trek_(film_series)_fun_facts
+     - action: utter_Star_Trek_(film_series)_fun_facts
+
+- story: tell me more about Star_Trek_(film_series)
+  steps:
+    - intent: Star_Trek_(film_series)_fun_facts
+    - action: utter_Star_Trek_(film_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Star_Trek_(film_series)_fun_facts
+
+- story: tell me more about Star_Trek_(film_series)
+  steps:
+    - intent: Star_Trek_(film_series)_fun_facts
+    - action: utter_Star_Trek_(film_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Star_Trek_(film_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Star_Trek_(film_series)_fun_facts
+
+- story: about Bruno_Mars_fun_facts
+  steps:
+     - intent: Bruno_Mars_fun_facts
+     - action: utter_Bruno_Mars_fun_facts
+
+- story: tell me more about Bruno_Mars
+  steps:
+    - intent: Bruno_Mars_fun_facts
+    - action: utter_Bruno_Mars_fun_facts
+    - intent: tell_me_more
+    - action: utter_Bruno_Mars_fun_facts
+
+- story: tell me more about Bruno_Mars
+  steps:
+    - intent: Bruno_Mars_fun_facts
+    - action: utter_Bruno_Mars_fun_facts
+    - intent: tell_me_more
+    - action: utter_Bruno_Mars_fun_facts
+    - intent: tell_me_more
+    - action: utter_Bruno_Mars_fun_facts
+
+- story: about Mission:_Impossible_(film_series)_fun_facts
+  steps:
+     - intent: Mission:_Impossible_(film_series)_fun_facts
+     - action: utter_Mission:_Impossible_(film_series)_fun_facts
+
+- story: tell me more about Mission:_Impossible_(film_series)
+  steps:
+    - intent: Mission:_Impossible_(film_series)_fun_facts
+    - action: utter_Mission:_Impossible_(film_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Mission:_Impossible_(film_series)_fun_facts
+
+- story: tell me more about Mission:_Impossible_(film_series)
+  steps:
+    - intent: Mission:_Impossible_(film_series)_fun_facts
+    - action: utter_Mission:_Impossible_(film_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Mission:_Impossible_(film_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Mission:_Impossible_(film_series)_fun_facts
+
+- story: about Mario_Kart_fun_facts
+  steps:
+     - intent: Mario_Kart_fun_facts
+     - action: utter_Mario_Kart_fun_facts
+
+- story: tell me more about Mario_Kart
+  steps:
+    - intent: Mario_Kart_fun_facts
+    - action: utter_Mario_Kart_fun_facts
+    - intent: tell_me_more
+    - action: utter_Mario_Kart_fun_facts
+
+- story: tell me more about Mario_Kart
+  steps:
+    - intent: Mario_Kart_fun_facts
+    - action: utter_Mario_Kart_fun_facts
+    - intent: tell_me_more
+    - action: utter_Mario_Kart_fun_facts
+    - intent: tell_me_more
+    - action: utter_Mario_Kart_fun_facts
+
+- story: about J_K_Rowling_fun_facts
+  steps:
+     - intent: J_K_Rowling_fun_facts
+     - action: utter_J_K_Rowling_fun_facts
+
+- story: tell me more about J_K_Rowling
+  steps:
+    - intent: J_K_Rowling_fun_facts
+    - action: utter_J_K_Rowling_fun_facts
+    - intent: tell_me_more
+    - action: utter_J_K_Rowling_fun_facts
+
+- story: tell me more about J_K_Rowling
+  steps:
+    - intent: J_K_Rowling_fun_facts
+    - action: utter_J_K_Rowling_fun_facts
+    - intent: tell_me_more
+    - action: utter_J_K_Rowling_fun_facts
+    - intent: tell_me_more
+    - action: utter_J_K_Rowling_fun_facts
+
+- story: about John_Green_(author)_fun_facts
+  steps:
+     - intent: John_Green_(author)_fun_facts
+     - action: utter_John_Green_(author)_fun_facts
+
+- story: tell me more about John_Green_(author)
+  steps:
+    - intent: John_Green_(author)_fun_facts
+    - action: utter_John_Green_(author)_fun_facts
+    - intent: tell_me_more
+    - action: utter_John_Green_(author)_fun_facts
+
+- story: tell me more about John_Green_(author)
+  steps:
+    - intent: John_Green_(author)_fun_facts
+    - action: utter_John_Green_(author)_fun_facts
+    - intent: tell_me_more
+    - action: utter_John_Green_(author)_fun_facts
+    - intent: tell_me_more
+    - action: utter_John_Green_(author)_fun_facts
+
+- story: about Chewbacca_fun_facts
+  steps:
+     - intent: Chewbacca_fun_facts
+     - action: utter_Chewbacca_fun_facts
+
+- story: tell me more about Chewbacca
+  steps:
+    - intent: Chewbacca_fun_facts
+    - action: utter_Chewbacca_fun_facts
+    - intent: tell_me_more
+    - action: utter_Chewbacca_fun_facts
+
+- story: tell me more about Chewbacca
+  steps:
+    - intent: Chewbacca_fun_facts
+    - action: utter_Chewbacca_fun_facts
+    - intent: tell_me_more
+    - action: utter_Chewbacca_fun_facts
+    - intent: tell_me_more
+    - action: utter_Chewbacca_fun_facts
+
+- story: about Lionel_Messi_fun_facts
+  steps:
+     - intent: Lionel_Messi_fun_facts
+     - action: utter_Lionel_Messi_fun_facts
+
+- story: tell me more about Lionel_Messi
+  steps:
+    - intent: Lionel_Messi_fun_facts
+    - action: utter_Lionel_Messi_fun_facts
+    - intent: tell_me_more
+    - action: utter_Lionel_Messi_fun_facts
+
+- story: tell me more about Lionel_Messi
+  steps:
+    - intent: Lionel_Messi_fun_facts
+    - action: utter_Lionel_Messi_fun_facts
+    - intent: tell_me_more
+    - action: utter_Lionel_Messi_fun_facts
+    - intent: tell_me_more
+    - action: utter_Lionel_Messi_fun_facts
+
+- story: about Spider-Man_in_film_fun_facts
+  steps:
+     - intent: Spider-Man_in_film_fun_facts
+     - action: utter_Spider-Man_in_film_fun_facts
+
+- story: tell me more about Spider-Man_in_film
+  steps:
+    - intent: Spider-Man_in_film_fun_facts
+    - action: utter_Spider-Man_in_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Spider-Man_in_film_fun_facts
+
+- story: tell me more about Spider-Man_in_film
+  steps:
+    - intent: Spider-Man_in_film_fun_facts
+    - action: utter_Spider-Man_in_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Spider-Man_in_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Spider-Man_in_film_fun_facts
+
+- story: about Star_Trek_fun_facts
+  steps:
+     - intent: Star_Trek_fun_facts
+     - action: utter_Star_Trek_fun_facts
+
+- story: tell me more about Star_Trek
+  steps:
+    - intent: Star_Trek_fun_facts
+    - action: utter_Star_Trek_fun_facts
+    - intent: tell_me_more
+    - action: utter_Star_Trek_fun_facts
+
+- story: tell me more about Star_Trek
+  steps:
+    - intent: Star_Trek_fun_facts
+    - action: utter_Star_Trek_fun_facts
+    - intent: tell_me_more
+    - action: utter_Star_Trek_fun_facts
+    - intent: tell_me_more
+    - action: utter_Star_Trek_fun_facts
+
+- story: about Terminator_(franchise)_fun_facts
+  steps:
+     - intent: Terminator_(franchise)_fun_facts
+     - action: utter_Terminator_(franchise)_fun_facts
+
+- story: tell me more about Terminator_(franchise)
+  steps:
+    - intent: Terminator_(franchise)_fun_facts
+    - action: utter_Terminator_(franchise)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Terminator_(franchise)_fun_facts
+
+- story: tell me more about Terminator_(franchise)
+  steps:
+    - intent: Terminator_(franchise)_fun_facts
+    - action: utter_Terminator_(franchise)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Terminator_(franchise)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Terminator_(franchise)_fun_facts
+
+- story: about Christopher_Robin_(film)_fun_facts
+  steps:
+     - intent: Christopher_Robin_(film)_fun_facts
+     - action: utter_Christopher_Robin_(film)_fun_facts
+
+- story: tell me more about Christopher_Robin_(film)
+  steps:
+    - intent: Christopher_Robin_(film)_fun_facts
+    - action: utter_Christopher_Robin_(film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Christopher_Robin_(film)_fun_facts
+
+- story: tell me more about Christopher_Robin_(film)
+  steps:
+    - intent: Christopher_Robin_(film)_fun_facts
+    - action: utter_Christopher_Robin_(film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Christopher_Robin_(film)_fun_facts
+    - intent: tell_me_more
+    - action: utter_Christopher_Robin_(film)_fun_facts
+
+- story: about Self-driving_car_fun_facts
+  steps:
+     - intent: Self-driving_car_fun_facts
+     - action: utter_Self-driving_car_fun_facts
+
+- story: tell me more about Self-driving_car
+  steps:
+    - intent: Self-driving_car_fun_facts
+    - action: utter_Self-driving_car_fun_facts
+    - intent: tell_me_more
+    - action: utter_Self-driving_car_fun_facts
+
+- story: tell me more about Self-driving_car
+  steps:
+    - intent: Self-driving_car_fun_facts
+    - action: utter_Self-driving_car_fun_facts
+    - intent: tell_me_more
+    - action: utter_Self-driving_car_fun_facts
+    - intent: tell_me_more
+    - action: utter_Self-driving_car_fun_facts
+
+- story: about Childrens_literature_fun_facts
+  steps:
+     - intent: Childrens_literature_fun_facts
+     - action: utter_Childrens_literature_fun_facts
+
+- story: tell me more about Childrens_literature
+  steps:
+    - intent: Childrens_literature_fun_facts
+    - action: utter_Childrens_literature_fun_facts
+    - intent: tell_me_more
+    - action: utter_Childrens_literature_fun_facts
+
+- story: tell me more about Childrens_literature
+  steps:
+    - intent: Childrens_literature_fun_facts
+    - action: utter_Childrens_literature_fun_facts
+    - intent: tell_me_more
+    - action: utter_Childrens_literature_fun_facts
+    - intent: tell_me_more
+    - action: utter_Childrens_literature_fun_facts
+
+- story: about Mario_Bros._fun_facts
+  steps:
+     - intent: Mario_Bros._fun_facts
+     - action: utter_Mario_Bros._fun_facts
+
+- story: tell me more about Mario_Bros.
+  steps:
+    - intent: Mario_Bros._fun_facts
+    - action: utter_Mario_Bros._fun_facts
+    - intent: tell_me_more
+    - action: utter_Mario_Bros._fun_facts
+
+- story: tell me more about Mario_Bros.
+  steps:
+    - intent: Mario_Bros._fun_facts
+    - action: utter_Mario_Bros._fun_facts
+    - intent: tell_me_more
+    - action: utter_Mario_Bros._fun_facts
+    - intent: tell_me_more
+    - action: utter_Mario_Bros._fun_facts
+
+- story: about Selena_Gomez_fun_facts
+  steps:
+     - intent: Selena_Gomez_fun_facts
+     - action: utter_Selena_Gomez_fun_facts
+
+- story: tell me more about Selena_Gomez
+  steps:
+    - intent: Selena_Gomez_fun_facts
+    - action: utter_Selena_Gomez_fun_facts
+    - intent: tell_me_more
+    - action: utter_Selena_Gomez_fun_facts
+
+- story: tell me more about Selena_Gomez
+  steps:
+    - intent: Selena_Gomez_fun_facts
+    - action: utter_Selena_Gomez_fun_facts
+    - intent: tell_me_more
+    - action: utter_Selena_Gomez_fun_facts
+    - intent: tell_me_more
+    - action: utter_Selena_Gomez_fun_facts
+
+- story: about Non-fiction_fun_facts
+  steps:
+     - intent: Non-fiction_fun_facts
+     - action: utter_Non-fiction_fun_facts
+
+- story: tell me more about Non-fiction
+  steps:
+    - intent: Non-fiction_fun_facts
+    - action: utter_Non-fiction_fun_facts
+    - intent: tell_me_more
+    - action: utter_Non-fiction_fun_facts
+
+- story: tell me more about Non-fiction
+  steps:
+    - intent: Non-fiction_fun_facts
+    - action: utter_Non-fiction_fun_facts
+    - intent: tell_me_more
+    - action: utter_Non-fiction_fun_facts
+    - intent: tell_me_more
+    - action: utter_Non-fiction_fun_facts
+
+- story: about Miley_Cyrus_fun_facts
+  steps:
+     - intent: Miley_Cyrus_fun_facts
+     - action: utter_Miley_Cyrus_fun_facts
+
+- story: tell me more about Miley_Cyrus
+  steps:
+    - intent: Miley_Cyrus_fun_facts
+    - action: utter_Miley_Cyrus_fun_facts
+    - intent: tell_me_more
+    - action: utter_Miley_Cyrus_fun_facts
+
+- story: tell me more about Miley_Cyrus
+  steps:
+    - intent: Miley_Cyrus_fun_facts
+    - action: utter_Miley_Cyrus_fun_facts
+    - intent: tell_me_more
+    - action: utter_Miley_Cyrus_fun_facts
+    - intent: tell_me_more
+    - action: utter_Miley_Cyrus_fun_facts
+
+- story: about John_McCain_fun_facts
+  steps:
+     - intent: John_McCain_fun_facts
+     - action: utter_John_McCain_fun_facts
+
+- story: tell me more about John_McCain
+  steps:
+    - intent: John_McCain_fun_facts
+    - action: utter_John_McCain_fun_facts
+    - intent: tell_me_more
+    - action: utter_John_McCain_fun_facts
+
+- story: tell me more about John_McCain
+  steps:
+    - intent: John_McCain_fun_facts
+    - action: utter_John_McCain_fun_facts
+    - intent: tell_me_more
+    - action: utter_John_McCain_fun_facts
+    - intent: tell_me_more
+    - action: utter_John_McCain_fun_facts
+
+- story: about Tetris_fun_facts
+  steps:
+     - intent: Tetris_fun_facts
+     - action: utter_Tetris_fun_facts
+
+- story: tell me more about Tetris
+  steps:
+    - intent: Tetris_fun_facts
+    - action: utter_Tetris_fun_facts
+    - intent: tell_me_more
+    - action: utter_Tetris_fun_facts
+
+- story: tell me more about Tetris
+  steps:
+    - intent: Tetris_fun_facts
+    - action: utter_Tetris_fun_facts
+    - intent: tell_me_more
+    - action: utter_Tetris_fun_facts
+    - intent: tell_me_more
+    - action: utter_Tetris_fun_facts
+
+- story: about The_Flash_(2014_TV_series)_fun_facts
+  steps:
+     - intent: The_Flash_(2014_TV_series)_fun_facts
+     - action: utter_The_Flash_(2014_TV_series)_fun_facts
+
+- story: tell me more about The_Flash_(2014_TV_series)
+  steps:
+    - intent: The_Flash_(2014_TV_series)_fun_facts
+    - action: utter_The_Flash_(2014_TV_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_The_Flash_(2014_TV_series)_fun_facts
+
+- story: tell me more about The_Flash_(2014_TV_series)
+  steps:
+    - intent: The_Flash_(2014_TV_series)_fun_facts
+    - action: utter_The_Flash_(2014_TV_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_The_Flash_(2014_TV_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_The_Flash_(2014_TV_series)_fun_facts
+
+- story: about The_Godfather_(film_series)_fun_facts
+  steps:
+     - intent: The_Godfather_(film_series)_fun_facts
+     - action: utter_The_Godfather_(film_series)_fun_facts
+
+- story: tell me more about The_Godfather_(film_series)
+  steps:
+    - intent: The_Godfather_(film_series)_fun_facts
+    - action: utter_The_Godfather_(film_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_The_Godfather_(film_series)_fun_facts
+
+- story: tell me more about The_Godfather_(film_series)
+  steps:
+    - intent: The_Godfather_(film_series)_fun_facts
+    - action: utter_The_Godfather_(film_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_The_Godfather_(film_series)_fun_facts
+    - intent: tell_me_more
+    - action: utter_The_Godfather_(film_series)_fun_facts
+
+- story: about Anime_fun_facts
+  steps:
+     - intent: Anime_fun_facts
+     - action: utter_Anime_fun_facts
+
+- story: tell me more about Anime
+  steps:
+    - intent: Anime_fun_facts
+    - action: utter_Anime_fun_facts
+    - intent: tell_me_more
+    - action: utter_Anime_fun_facts
+
+- story: tell me more about Anime
+  steps:
+    - intent: Anime_fun_facts
+    - action: utter_Anime_fun_facts
+    - intent: tell_me_more
+    - action: utter_Anime_fun_facts
+    - intent: tell_me_more
+    - action: utter_Anime_fun_facts
+
+- story: about Fantasy_film_fun_facts
+  steps:
+     - intent: Fantasy_film_fun_facts
+     - action: utter_Fantasy_film_fun_facts
+
+- story: tell me more about Fantasy_film
+  steps:
+    - intent: Fantasy_film_fun_facts
+    - action: utter_Fantasy_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Fantasy_film_fun_facts
+
+- story: tell me more about Fantasy_film
+  steps:
+    - intent: Fantasy_film_fun_facts
+    - action: utter_Fantasy_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Fantasy_film_fun_facts
+    - intent: tell_me_more
+    - action: utter_Fantasy_film_fun_facts
+
+

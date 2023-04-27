@@ -1,0 +1,770 @@
+version: "3.1"
+nlu:
+- intent: pet_definition
+  examples: |
+    - What is pet definition
+- intent: pet_fun_facts
+  examples: |
+    - what do you know about pet?
+- intent: Baseball_fun_facts
+  examples: |
+    - What do you know about Baseball?
+- intent: Football_fun_facts
+  examples: |
+    - Tell me something about Football
+- intent: Basketball_fun_facts
+  examples: |
+    - What do you know about Basketball?
+- intent: Car_fun_facts
+  examples: |
+    - Tell me something about Car
+- intent: Telephone_fun_facts
+  examples: |
+    - What do you know about Telephone?
+- intent: Fish_fun_facts
+  examples: |
+    - What do you know about Fish?
+- intent: Internet_fun_facts
+  examples: |
+    - I would like to know more about Internet
+- intent: Computer_fun_facts
+  examples: |
+    - I would like to know more about Computer
+- intent: Government_fun_facts
+  examples: |
+    - I would like to know more about Government
+- intent: Marvel_Comics_fun_facts
+  examples: |
+    - What do you know about Marvel Comics?
+- intent: Netflix_fun_facts
+  examples: |
+    - I would like to know more about Netflix
+- intent: Superhero_fun_facts
+  examples: |
+    - What do you know about Superhero?
+- intent: Planet_fun_facts
+  examples: |
+    - Tell me something about Planet
+- intent: Facebook_fun_facts
+  examples: |
+    - What do you know about Facebook?
+- intent: Concert_fun_facts
+  examples: |
+    - Tell me something about Concert
+- intent: National_Basketball_Association_fun_facts
+  examples: |
+    - Tell me something about National Basketball Association
+- intent: Drama_fun_facts
+  examples: |
+    - I would like to know more about Drama
+- intent: LeBron_James_fun_facts
+  examples: |
+    - Tell me something about LeBron James
+- intent: Lady_Gaga_fun_facts
+  examples: |
+    - I would like to know more about Lady Gaga
+- intent: Guitar_fun_facts
+  examples: |
+    - I would like to know more about Guitar
+- intent: Election_fun_facts
+  examples: |
+    - I would like to know more about Election
+- intent: Radio_fun_facts
+  examples: |
+    - What do you know about Radio?
+- intent: Sun_fun_facts
+  examples: |
+    - What do you know about Sun?
+- intent: Bird_fun_facts
+  examples: |
+    - I would like to know more about Bird
+- intent: Dog_fun_facts
+  examples: |
+    - I would like to know more about Dog
+- intent: Celebrity_fun_facts
+  examples: |
+    - What do you know about Celebrity?
+- intent: Horror_film_fun_facts
+  examples: |
+    - What do you know about Horror film?
+- intent: Earth_fun_facts
+  examples: |
+    - What do you know about Earth?
+- intent: Television_fun_facts
+  examples: |
+    - Tell me something about Television
+- intent: Travel_fun_facts
+  examples: |
+    - What do you know about Travel?
+- intent: Cricket_fun_facts
+  examples: |
+    - Tell me something about Cricket
+- intent: Stephen_Curry_fun_facts
+  examples: |
+    - Tell me something about Stephen Curry
+- intent: Golden_State_Warriors_fun_facts
+  examples: |
+    - What do you know about Golden State Warriors?
+- intent: Jazz_fun_facts
+  examples: |
+    - Tell me something about Jazz
+- intent: Entertainment_fun_facts
+  examples: |
+    - What do you know about Entertainment?
+- intent: YouTube_fun_facts
+  examples: |
+    - Tell me something about YouTube
+- intent: Multiplayer_video_game_fun_facts
+  examples: |
+    - What do you know about Multiplayer video game?
+- intent: Johnny_Depp_fun_facts
+  examples: |
+    - I would like to know more about Johnny Depp
+- intent: White_House_fun_facts
+  examples: |
+    - What do you know about White House?
+- intent: Quarterback_fun_facts
+  examples: |
+    - I would like to know more about Quarterback
+- intent: National_Football_League_fun_facts
+  examples: |
+    - I would like to know more about National Football League
+- intent: Eli_Manning_fun_facts
+  examples: |
+    - I would like to know more about Eli Manning
+- intent: President_fun_facts
+  examples: |
+    - I would like to know more about President
+- intent: Fox_News_fun_facts
+  examples: |
+    - What do you know about Fox News?
+- intent: Album_fun_facts
+  examples: |
+    - Tell me something about Album
+- intent: Comedy_film_fun_facts
+  examples: |
+    - What do you know about Comedy film?
+- intent: Shoe_fun_facts
+  examples: |
+    - What do you know about Shoe?
+- intent: Human_fun_facts
+  examples: |
+    - I would like to know more about Human
+- intent: Summit_(meeting)_fun_facts
+  examples: |
+    - I would like to know more about Summit (meeting)
+- intent: Video_game_fun_facts
+  examples: |
+    - What do you know about Video game?
+- intent: Country_music_fun_facts
+  examples: |
+    - Tell me something about Country music
+- intent: Horse_fun_facts
+  examples: |
+    - What do you know about Horse?
+- intent: Sock_fun_facts
+  examples: |
+    - What do you know about Sock?
+- intent: New_England_Patriots_fun_facts
+  examples: |
+    - What do you know about New England Patriots?
+- intent: Tom_Brady_fun_facts
+  examples: |
+    - I would like to know more about Tom Brady
+- intent: Dance_fun_facts
+  examples: |
+    - Tell me something about Dance
+- intent: Drake_(musician)_fun_facts
+  examples: |
+    - Tell me something about Drake (musician)
+- intent: Hat_fun_facts
+  examples: |
+    - What do you know about Hat?
+- intent: Snake_fun_facts
+  examples: |
+    - Tell me something about Snake
+- intent: Kim_Jong-un_fun_facts
+  examples: |
+    - Tell me something about Kim Jong-un
+- intent: Association_football_fun_facts
+  examples: |
+    - I would like to know more about Association football
+- intent: Reading_fun_facts
+  examples: |
+    - What do you know about Reading?
+- intent: Iron_Man_(2008_film)_fun_facts
+  examples: |
+    - Tell me something about Iron Man (2008 film)
+- intent: Michael_Jordan_fun_facts
+  examples: |
+    - I would like to know more about Michael Jordan
+- intent: Amazon_(company)_fun_facts
+  examples: |
+    - I would like to know more about Amazon (company)
+- intent: Minecraft_fun_facts
+  examples: |
+    - Tell me something about Minecraft
+- intent: Costume_fun_facts
+  examples: |
+    - Tell me something about Costume
+- intent: Fantasy_fun_facts
+  examples: |
+    - I would like to know more about Fantasy
+- intent: Lego_fun_facts
+  examples: |
+    - I would like to know more about Lego
+- intent: Democratic_Party_(United_States)_fun_facts
+  examples: |
+    - Tell me something about Democratic Party (United States)
+- intent: Google_fun_facts
+  examples: |
+    - What do you know about Google?
+- intent: Clothing_fun_facts
+  examples: |
+    - What do you know about Clothing?
+- intent: Shirt_fun_facts
+  examples: |
+    - I would like to know more about Shirt
+- intent: Comedy_fun_facts
+  examples: |
+    - Tell me something about Comedy
+- intent: William_Shakespeare_fun_facts
+  examples: |
+    - Tell me something about William Shakespeare
+- intent: United_States_Senate_fun_facts
+  examples: |
+    - What do you know about United States Senate?
+- intent: Frozen_(2013_film)_fun_facts
+  examples: |
+    - I would like to know more about Frozen (2013 film)
+- intent: Library_fun_facts
+  examples: |
+    - What do you know about Library?
+- intent: Universe_fun_facts
+  examples: |
+    - I would like to know more about Universe
+- intent: Swimming_fun_facts
+  examples: |
+    - Tell me something about Swimming
+- intent: Golf_fun_facts
+  examples: |
+    - Tell me something about Golf
+- intent: Softball_fun_facts
+  examples: |
+    - Tell me something about Softball
+- intent: Incredibles_2_fun_facts
+  examples: |
+    - I would like to know more about Incredibles 2
+- intent: World_Series_fun_facts
+  examples: |
+    - I would like to know more about World Series
+- intent: Chicago_Cubs_fun_facts
+  examples: |
+    - I would like to know more about Chicago Cubs
+- intent: J._R._R._Tolkien_fun_facts
+  examples: |
+    - I would like to know more about J. R. R. Tolkien
+- intent: Congress_fun_facts
+  examples: |
+    - What do you know about Congress?
+- intent: Poetry_fun_facts
+  examples: |
+    - Tell me something about Poetry
+- intent: Fiction_fun_facts
+  examples: |
+    - Tell me something about Fiction
+- intent: Rapping_fun_facts
+  examples: |
+    - Tell me something about Rapping
+- intent: Animal_fun_facts
+  examples: |
+    - Tell me something about Animal
+- intent: Target_Corporation_fun_facts
+  examples: |
+    - Tell me something about Target Corporation
+- intent: Meryl_Streep_fun_facts
+  examples: |
+    - I would like to know more about Meryl Streep
+- intent: Hockey_fun_facts
+  examples: |
+    - Tell me something about Hockey
+- intent: Call_of_Duty_fun_facts
+  examples: |
+    - Tell me something about Call of Duty
+- intent: Politician_fun_facts
+  examples: |
+    - What do you know about Politician?
+- intent: Tom_Cruise_fun_facts
+  examples: |
+    - I would like to know more about Tom Cruise
+- intent: Jumanji_fun_facts
+  examples: |
+    - I would like to know more about Jumanji
+- intent: Hillary_Clinton_fun_facts
+  examples: |
+    - I would like to know more about Hillary Clinton
+- intent: Moon_fun_facts
+  examples: |
+    - What do you know about Moon?
+- intent: Piano_fun_facts
+  examples: |
+    - What do you know about Piano?
+- intent: Spotify_fun_facts
+  examples: |
+    - What do you know about Spotify?
+- intent: Tesla,_Inc._fun_facts
+  examples: |
+    - Tell me something about Tesla, Inc.
+- intent: Republican_Party_(United_States)_fun_facts
+  examples: |
+    - Tell me something about Republican Party (United States)
+- intent: Star_Wars_fun_facts
+  examples: |
+    - I would like to know more about Star Wars
+- intent: Xbox_fun_facts
+  examples: |
+    - What do you know about Xbox?
+- intent: Boot_fun_facts
+  examples: |
+    - I would like to know more about Boot
+- intent: Robot_fun_facts
+  examples: |
+    - I would like to know more about Robot
+- intent: Box_office_fun_facts
+  examples: |
+    - I would like to know more about Box office
+- intent: Dr._Seuss_fun_facts
+  examples: |
+    - What do you know about Dr. Seuss?
+- intent: Mars_fun_facts
+  examples: |
+    - I would like to know more about Mars
+- intent: Academy_Awards_fun_facts
+  examples: |
+    - Tell me something about Academy Awards
+- intent: Cat_fun_facts
+  examples: |
+    - Tell me something about Cat
+- intent: Reddit_fun_facts
+  examples: |
+    - What do you know about Reddit?
+- intent: Physics_fun_facts
+  examples: |
+    - Tell me something about Physics
+- intent: Tennis_fun_facts
+  examples: |
+    - What do you know about Tennis?
+- intent: Literature_fun_facts
+  examples: |
+    - Tell me something about Literature
+- intent: Taylor_Swift_fun_facts
+  examples: |
+    - I would like to know more about Taylor Swift
+- intent: IPhone_fun_facts
+  examples: |
+    - Tell me something about IPhone
+- intent: Gymnastics_fun_facts
+  examples: |
+    - Tell me something about Gymnastics
+- intent: Pop_music_fun_facts
+  examples: |
+    - I would like to know more about Pop music
+- intent: Barack_Obama_fun_facts
+  examples: |
+    - I would like to know more about Barack Obama
+- intent: Steven_Spielberg_fun_facts
+  examples: |
+    - I would like to know more about Steven Spielberg
+- intent: FIFA_World_Cup_fun_facts
+  examples: |
+    - What do you know about FIFA World Cup?
+- intent: Game_of_Thrones_fun_facts
+  examples: |
+    - I would like to know more about Game of Thrones
+- intent: Trousers_fun_facts
+  examples: |
+    - What do you know about Trousers?
+- intent: Kim_Kardashian_fun_facts
+  examples: |
+    - I would like to know more about Kim Kardashian
+- intent: Soundtrack_fun_facts
+  examples: |
+    - What do you know about Soundtrack?
+- intent: Bible_fun_facts
+  examples: |
+    - What do you know about Bible?
+- intent: PlayStation_fun_facts
+  examples: |
+    - Tell me something about PlayStation
+- intent: Adele_fun_facts
+  examples: |
+    - I would like to know more about Adele
+- intent: Green_Bay_Packers_fun_facts
+  examples: |
+    - What do you know about Green Bay Packers?
+- intent: The_Walt_Disney_Company_fun_facts
+  examples: |
+    - I would like to know more about The Walt Disney Company
+- intent: New_York_Yankees_fun_facts
+  examples: |
+    - I would like to know more about New York Yankees
+- intent: Roger_Federer_fun_facts
+  examples: |
+    - Tell me something about Roger Federer
+- intent: Prime_minister_fun_facts
+  examples: |
+    - What do you know about Prime minister?
+- intent: Michael_Jackson_fun_facts
+  examples: |
+    - What do you know about Michael Jackson?
+- intent: Walt_Disney_Pictures_fun_facts
+  examples: |
+    - What do you know about Walt Disney Pictures?
+- intent: Chess_fun_facts
+  examples: |
+    - What do you know about Chess?
+- intent: Wonder_Woman_(2017_film)_fun_facts
+  examples: |
+    - I would like to know more about Wonder Woman (2017 film)
+- intent: Pet_fun_facts
+  examples: |
+    - I would like to know more about Pet
+- intent: Scientist_fun_facts
+  examples: |
+    - I would like to know more about Scientist
+- intent: Harry_Potter_fun_facts
+  examples: |
+    - I would like to know more about Harry Potter
+- intent: Violin_fun_facts
+  examples: |
+    - I would like to know more about Violin
+- intent: Thor_(film)_fun_facts
+  examples: |
+    - Tell me something about Thor (film)
+- intent: Comic_book_fun_facts
+  examples: |
+    - I would like to know more about Comic book
+- intent: Voting_fun_facts
+  examples: |
+    - Tell me something about Voting
+- intent: Football_team_fun_facts
+  examples: |
+    - What do you know about Football team?
+- intent: Rotten_Tomatoes_fun_facts
+  examples: |
+    - Tell me something about Rotten Tomatoes
+- intent: Deadpool_2_fun_facts
+  examples: |
+    - I would like to know more about Deadpool 2
+- intent: Mark_Twain_fun_facts
+  examples: |
+    - What do you know about Mark Twain?
+- intent: Space_fun_facts
+  examples: |
+    - What do you know about Space?
+- intent: Led_Zeppelin_fun_facts
+  examples: |
+    - I would like to know more about Led Zeppelin
+- intent: Shark_fun_facts
+  examples: |
+    - What do you know about Shark?
+- intent: IMDb_fun_facts
+  examples: |
+    - Tell me something about IMDb
+- intent: Artificial_intelligence_fun_facts
+  examples: |
+    - I would like to know more about Artificial intelligence
+- intent: Virtual_reality_fun_facts
+  examples: |
+    - I would like to know more about Virtual reality
+- intent: Avengers:_Infinity_War_fun_facts
+  examples: |
+    - Tell me something about Avengers: Infinity War
+- intent: Science_fiction_fun_facts
+  examples: |
+    - Tell me something about Science fiction
+- intent: Kanye_West_fun_facts
+  examples: |
+    - I would like to know more about Kanye West
+- intent: Rock_music_fun_facts
+  examples: |
+    - Tell me something about Rock music
+- intent: Black_Panther_(film)_fun_facts
+  examples: |
+    - Tell me something about Black Panther (film)
+- intent: Governor_fun_facts
+  examples: |
+    - I would like to know more about Governor
+- intent: George_Clooney_fun_facts
+  examples: |
+    - Tell me something about George Clooney
+- intent: Inception_fun_facts
+  examples: |
+    - Tell me something about Inception
+- intent: Jay-Z_fun_facts
+  examples: |
+    - Tell me something about Jay-Z
+- intent: Volleyball_fun_facts
+  examples: |
+    - Tell me something about Volleyball
+- intent: Classical_music_fun_facts
+  examples: |
+    - Tell me something about Classical music
+- intent: Morgan_Freeman_fun_facts
+  examples: |
+    - What do you know about Morgan Freeman?
+- intent: Astronomy_fun_facts
+  examples: |
+    - What do you know about Astronomy?
+- intent: Elton_John_fun_facts
+  examples: |
+    - Tell me something about Elton John
+- intent: Justin_Bieber_fun_facts
+  examples: |
+    - I would like to know more about Justin Bieber
+- intent: Air_Jordan_fun_facts
+  examples: |
+    - What do you know about Air Jordan?
+- intent: Board_game_fun_facts
+  examples: |
+    - Tell me something about Board game
+- intent: Harry_Potter_(film_series)_fun_facts
+  examples: |
+    - Tell me something about Harry Potter (film series)
+- intent: Elvis_Presley_fun_facts
+  examples: |
+    - I would like to know more about Elvis Presley
+- intent: Batman_fun_facts
+  examples: |
+    - What do you know about Batman?
+- intent: Wrestling_fun_facts
+  examples: |
+    - What do you know about Wrestling?
+- intent: Stephen_King_fun_facts
+  examples: |
+    - I would like to know more about Stephen King
+- intent: The_Beatles_fun_facts
+  examples: |
+    - What do you know about The Beatles?
+- intent: Elon_Musk_fun_facts
+  examples: |
+    - Tell me something about Elon Musk
+- intent: Titanic_(1997_film)_fun_facts
+  examples: |
+    - I would like to know more about Titanic (1997 film)
+- intent: Ariana_Grande_fun_facts
+  examples: |
+    - I would like to know more about Ariana Grande
+- intent: Siri_fun_facts
+  examples: |
+    - I would like to know more about Siri
+- intent: Oscar_Wilde_fun_facts
+  examples: |
+    - What do you know about Oscar Wilde?
+- intent: Transformers_(film_series)_fun_facts
+  examples: |
+    - Tell me something about Transformers (film series)
+- intent: Nintendo_fun_facts
+  examples: |
+    - Tell me something about Nintendo
+- intent: Monopoly_(game)_fun_facts
+  examples: |
+    - I would like to know more about Monopoly (game)
+- intent: Stranger_Things_fun_facts
+  examples: |
+    - Tell me something about Stranger Things
+- intent: Luke_Skywalker_fun_facts
+  examples: |
+    - What do you know about Luke Skywalker?
+- intent: Katy_Perry_fun_facts
+  examples: |
+    - Tell me something about Katy Perry
+- intent: Gucci_fun_facts
+  examples: |
+    - I would like to know more about Gucci
+- intent: Machine_learning_fun_facts
+  examples: |
+    - I would like to know more about Machine learning
+- intent: Spider-Man_fun_facts
+  examples: |
+    - I would like to know more about Spider-Man
+- intent: Batman_in_film_fun_facts
+  examples: |
+    - I would like to know more about Batman in film
+- intent: Cristiano_Ronaldo_fun_facts
+  examples: |
+    - What do you know about Cristiano Ronaldo?
+- intent: Model_(person)_fun_facts
+  examples: |
+    - What do you know about Model (person)?
+- intent: Pandora_Radio_fun_facts
+  examples: |
+    - I would like to know more about Pandora Radio
+- intent: Jeans_fun_facts
+  examples: |
+    - I would like to know more about Jeans
+- intent: Hip_hop_fun_facts
+  examples: |
+    - Tell me something about Hip hop
+- intent: Harry_Potter_(character)_fun_facts
+  examples: |
+    - I would like to know more about Harry Potter (character)
+- intent: Serena_Williams_fun_facts
+  examples: |
+    - What do you know about Serena Williams?
+- intent: K-pop_fun_facts
+  examples: |
+    - What do you know about K-pop?
+- intent: Boston_Red_Sox_fun_facts
+  examples: |
+    - Tell me something about Boston Red Sox
+- intent: Insect_fun_facts
+  examples: |
+    - What do you know about Insect?
+- intent: Ed_Sheeran_fun_facts
+  examples: |
+    - What do you know about Ed Sheeran?
+- intent: Albert_Einstein_fun_facts
+  examples: |
+    - I would like to know more about Albert Einstein
+- intent: Extraterrestrial_life_fun_facts
+  examples: |
+    - Tell me something about Extraterrestrial life
+- intent: Bill_Clinton_fun_facts
+  examples: |
+    - I would like to know more about Bill Clinton
+- intent: Audiobook_fun_facts
+  examples: |
+    - Tell me something about Audiobook
+- intent: George_Washington_fun_facts
+  examples: |
+    - I would like to know more about George Washington
+- intent: Superman_in_film_fun_facts
+  examples: |
+    - I would like to know more about Superman in film
+- intent: Denzel_Washington_fun_facts
+  examples: |
+    - What do you know about Denzel Washington?
+- intent: Superman_fun_facts
+  examples: |
+    - What do you know about Superman?
+- intent: The_Hunger_Games_fun_facts
+  examples: |
+    - What do you know about The Hunger Games?
+- intent: Abraham_Lincoln_fun_facts
+  examples: |
+    - Tell me something about Abraham Lincoln
+- intent: Tom_Hanks_fun_facts
+  examples: |
+    - What do you know about Tom Hanks?
+- intent: Pac-Man_fun_facts
+  examples: |
+    - Tell me something about Pac-Man
+- intent: Blade_Runner_fun_facts
+  examples: |
+    - What do you know about Blade Runner?
+- intent: Dinosaur_fun_facts
+  examples: |
+    - Tell me something about Dinosaur
+- intent: Star_Trek_(film_series)_fun_facts
+  examples: |
+    - What do you know about Star Trek (film series)?
+- intent: Bruno_Mars_fun_facts
+  examples: |
+    - Tell me something about Bruno Mars
+- intent: Mario_Kart_fun_facts
+  examples: |
+    - Tell me something about Mario Kart
+- intent: J_K_Rowling_fun_facts
+  examples: |
+    - Tell me something about J. K. Rowling
+- intent: John_Green_(author)_fun_facts
+  examples: |
+    - What do you know about John Green (author)?
+- intent: Chewbacca_fun_facts
+  examples: |
+    - What do you know about Chewbacca?
+- intent: Spider-Man_in_film_fun_facts
+  examples: |
+    - What do you know about Spider-Man in film?
+- intent: Star_Trek_fun_facts
+  examples: |
+    - Tell me something about Star Trek
+- intent: Terminator_(franchise)_fun_facts
+  examples: |
+    - What do you know about Terminator (franchise)?
+- intent: Christopher_Robin_(film)_fun_facts
+  examples: |
+    - What do you know about Christopher Robin (film)?
+- intent: Self-driving_car_fun_facts
+  examples: |
+    - I would like to know more about Self-driving car
+- intent: Childrens_literature_fun_facts
+  examples: |
+    - Tell me something about Childrens literature
+- intent: Mario_Bros._fun_facts
+  examples: |
+    - What do you know about Mario Bros.?
+- intent: Selena_Gomez_fun_facts
+  examples: |
+    - Tell me something about Selena Gomez
+- intent: Non-fiction_fun_facts
+  examples: |
+    - I would like to know more about Non-fiction
+- intent: Miley_Cyrus_fun_facts
+  examples: |
+    - I would like to know more about Miley Cyrus
+- intent: John_McCain_fun_facts
+  examples: |
+    - What do you know about John McCain?
+- intent: Tetris_fun_facts
+  examples: |
+    - Tell me something about Tetris
+- intent: The_Flash_(2014_TV_series)_fun_facts
+  examples: |
+    - What do you know about The Flash (2014 TV series)?
+- intent: The_Godfather_(film_series)_fun_facts
+  examples: |
+    - I would like to know more about The Godfather (film series)
+- intent: Anime_fun_facts
+  examples: |
+    - Tell me something about Anime
+- intent: Fantasy_film_fun_facts
+  examples: |
+    - Tell me something about Fantasy film
+- intent: fish_fun_facts
+  examples: |
+    - What do you know about fish?
+- intent: tell_me_more
+  examples: |
+    - tell me more facts
+- intent: bot_challenge
+  examples: |
+    - am I talking to a human?
+- intent: fish_name
+  examples: |
+    - [Barreleye](fish_type)
+- intent: Mission:_Impossible_(film_series)_fun_facts
+  examples: |
+    - I would like to know more about Mission Impossible
+- intent: affirm
+  examples: |
+    - of course
+- intent: Lionel_Messi_fun_facts
+  examples: |
+    - I would like to know more about Messi
+- intent: deny
+  examples: |
+    - not really
+- intent: goodbye
+  examples: |
+    - good by
+- intent: mood_great
+  examples: |
+    - great
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+- intent: greet
+  examples: |
+    - hey there
